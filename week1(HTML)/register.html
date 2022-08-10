@@ -1,0 +1,148 @@
+<html>
+    <head>
+
+    </head>
+
+    <body style="background-color: teal; color: #fff;">
+            
+        <!-- Forms -->
+        <h1>Registeration Form</h1>
+
+        <form>
+            <table border="4" width="600" height="400">
+                <tbody>
+                    <tr>
+                        <td> <label>FirstName:</label></td>
+                        <td><input type="text" name="fName" required placeholder="enter your firstname"></td>
+                    </tr>
+                    <tr>
+                        <td><label>LastName:</label></td>
+                        <td><input type="text" name="lName" minlength="3" maxlength="10"></td>
+                    </tr>
+                    <tr>
+                        <td><label>Age:</label></td>
+                        <td><input type="number" min="10" max="80" name="userAge"></td>
+                    </tr>
+                    <tr>
+                        <td><label>Password:</label></td>
+                        <td><input type="password" name="password"></td>
+                    </tr>
+                    <tr>
+                        <td><label>Email:</label></td>
+                        <td><input type="email" name="password"></td>
+                    </tr>
+                    <tr>
+                        <td><label>Files</label></td>
+                        <td><input type="file" name="userImage" accept="image/jpeg,image/png" multiple></td>
+                    </tr>
+                    <tr>
+                        <td><label>Your date</label></td>
+                        <td><input type="date" name="userDate" ></td>
+                    </tr>
+                    <tr>
+                        <td><label>Your color</label></td>
+                        <td><input type="color" name="userColor"></td>
+                    </tr>
+                    
+                    <tr>
+                        <td><label>Your Comment</label></td>
+                        <td><textarea name="userComment"  cols="40" rows="10" placeholder="ahmed" required></textarea></td>
+                    </tr>         
+                    
+                    <tr>
+                    </tr>
+                </tbody>
+            </table>
+            
+            
+            
+            <!-- radio buttons -->
+            <label>male</label>
+            <input type="radio" name="gender" value="male">
+            
+            <label>female</label>
+            <input type="radio" name="gender" value="female" >
+            
+            <br>
+            <br>
+
+
+            <label>Student: </label>
+            <input type="radio" name="case" value="student">
+            
+            <label>Graduated</label>
+            <input type="radio" name="case" value="graduated" >
+            
+            <br>
+            <br>
+
+            <label>10-4</label>
+            <input type="radio" name="time" value="">
+
+            <label>4-10</label>
+            <input type="radio" name="time" value="">
+            
+            <label>7-4</label>
+            <input type="radio" name="time" value="">
+            
+            <label>3-10</label>
+            <input type="radio" name="time" value="">
+                
+            <br>
+            <br>
+            
+            <!-- checkbox -->
+            <label>Java</label>
+            <input type="checkbox" name="proglang[]" value="java">
+            
+            <label>Php</label>
+            <input type="checkbox" name="proglang[]" value="php">
+            
+            <label>Python</label>
+            <input type="checkbox" name="proglang[]" value="python">
+            
+            
+            <br>
+            <br>
+            
+            <label>Margin</label>
+            <input type="checkbox" name="cssskills[]" value="margin">
+            <label>Padding</label>
+            <input type="checkbox" name="cssskills[]" value="padding">
+            <label>Position</label>
+            <input type="checkbox" name="cssskills[]" value="position">
+
+            <br>
+            <br>
+
+            <!-- select option -->
+            <select name="country" disabled>
+                <option value="egypt" >Egypt</option>
+                <option value="india" disabled>India</option>
+                <option value="sudan" selected>Sudan</option>
+                <option value="indonsia">Indonsia</option>
+            </select>
+            
+            <br>
+            <br>
+
+            <!--select optgroup -->
+            <select name="cars" >
+                <optgroup label="Swedish Cars" disabled>
+                    <option value="volvo">Volvo</option>
+                    <option value="saab">Saab</option>
+                </optgroup>
+                <optgroup label="German Cars">
+                    <option value="mercedes">Mercedes</option>
+                    <option value="audi">Audi</option>
+                </optgroup>
+            </select>
+            <br>
+            <br>
+
+            <button type="submit">Register</button>
+            <button type="reset">reset</button>           
+        </form>
+
+    </body>
+</html>
