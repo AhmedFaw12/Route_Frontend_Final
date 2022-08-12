@@ -1,0 +1,68 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: 'segoe ui light';
+}
+
+/* home section */
+.home{
+    background-image: url("../images/bg2.jpg");
+    background-size: 100% 100%;
+    height: 100vh;
+    color: #fff;
+    text-align: center;
+}
+
+.home p{
+    font-family: 'Dancing Script', cursive;
+    font-size: 230%;   
+}
+
+.home .btn{
+    padding: 15px 25px;
+    border: none;
+    margin-top: 20px;
+}
+
+.home .btn1{
+    background-color: #c1ab84;
+}
+
+
+/* meals section */
+.meals{
+    width: 90%;
+    margin: auto;
+}
+
+
+.meal{
+
+    width: 25%;
+    float: left;
+    text-align: center;
+}
+
+.meal p{
+    padding: 0px 20px;
+}
+
+.meal img{
+    width: 90%;
+    border-radius: 50%;
+}
+
+.meal .brdr{
+    width: 25%;
+    height: 2px;
+    background-color: #ccc;
+    margin: auto;
+}
+
+.clearfix{
+    clear: both;
+}
+
