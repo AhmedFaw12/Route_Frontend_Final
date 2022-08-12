@@ -79,7 +79,7 @@ float property:
     
     ------------------------------------------------------------------------------------------------------------------------------------------------------------------
     -disadvantages of float:
-        -last element that takes float , makes following elements float besides them even though they are block 
+        1)last element that takes float , makes following elements float besides them even though they are block 
 
         Example:
             style.css:
@@ -108,6 +108,8 @@ float property:
                 <h1>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iste, molestiae?</h1>
             
             -all h1 will float beside divs that have floated
+            
+        2)elements that takes float get outside of their parent
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 clear property:

@@ -96,6 +96,11 @@ table tag:
     -th to write heading of column heading
     -td to write value of column
 
+    Table uses:
+        -don't ever use table to divide/design our page theme
+        -table is only used to display data/products/ ...
+
+
     Attributes:
         1)border: 
             -border attribute to make a border around table and between columns and rows

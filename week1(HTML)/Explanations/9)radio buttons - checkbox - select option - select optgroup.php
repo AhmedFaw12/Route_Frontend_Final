@@ -63,6 +63,15 @@ checkbox :
     -each checkbox should have same name(we will put them in an array)
     -each checkbox should have a different value
 
+    Attributs:
+        checked:
+            - The checked attribute is a boolean attribute.
+
+            - When present, it specifies that an <input> element should be pre-selected (checked) when the page loads.
+
+            - The checked attribute can be used with <input type="checkbox"> and <input type="radio">.
+
+            - The checked attribute can also be set after the page load, with a JavaScript.
 
     Example:
         <label>Margin</label>
@@ -70,7 +79,7 @@ checkbox :
         <label>Padding</label>
         <input type="checkbox" name="cssskills[]" value="padding">
         <label>Position</label>
-        <input type="checkbox" name="cssskills[]" value="position">
+        <input type="checkbox" name="cssskills[]" value="position" checked>
 
     Example:
         <label>Java</label>

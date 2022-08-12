@@ -1,0 +1,101 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+
+body{
+    font-family: 'Alegreya', serif;
+}
+
+.clearfix{
+    clear:both;
+}
+
+.container{
+    width: 90%;
+    margin: auto;
+}
+
+p{
+    font-family: 'Alegreya Sans', sans-serif;
+    color:#888;
+    margin: 10px 0;
+}
+
+
+/* home section */
+.home{
+    overflow: auto;
+    background-image: url("../images/bg.jpg");
+    /* background-size: 100% 100%; */
+    background-size: cover;
+    background-position: center center;
+    text-align: center;
+    height: 100vh;
+    color: #fff;
+}
+
+.home .home-content{
+    margin-top: 50px;
+}
+
+.home h1{
+    font-size: 86px;
+    margin-bottom: 30px;
+}
+
+
+.home p{
+    color: #fff;
+    font-size: 22px;
+    line-height: 200%;
+}
+
+.home .btn{
+    padding: 15px 27px;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    margin-top: 30px;
+}
+
+.home .btn1{
+    background-color: #8e7754;
+    margin-right: 5px;
+}
+.home .btn2{
+    border: 2px solid white;
+    background-color: transparent ;
+}
+
+/* baking section */
+.baking{
+    padding: 40px 0;
+    text-align: center;
+}
+
+
+.baking h2{
+    margin-bottom: 20px;
+}
+
+.baking-item{
+    width: 33.33%;
+    float: left;
+    margin-top: 40px;
+}
+
+.baking-item img{
+    width: 90%;
+}
+
+.baking-item h3{
+    margin: 20px 0;
+}
+
+.baking-item p{
+    padding: 10px 30px;
+}
+
+
