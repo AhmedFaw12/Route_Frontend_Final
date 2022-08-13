@@ -9,7 +9,7 @@ Css:
             <div>
 
             </div>
-        it isMost frequent/used Tag
+        it is Most frequent/used Tag
 
         -Intro:
             -The <div> tag defines a division or a section in an HTML document.
@@ -60,8 +60,7 @@ Css:
                 -automatic to its content
 
                 -so if div has no content , height will be 0 and div will not appear
-                    
-
+                
                 example:
                     style.css:
                         .parent{
