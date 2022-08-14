@@ -80,7 +80,7 @@ Margin Collapse:
                         background-color: green;
                         margin-top: 50px;
                     }
-        3)overflow:auto :
+        3)overflow:auto  or overflow:hidden:
             -this is the best solution
             -overflow will be explained later
             index.html:

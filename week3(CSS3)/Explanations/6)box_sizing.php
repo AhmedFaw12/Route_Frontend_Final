@@ -24,7 +24,7 @@ box-sizing:
     Important trick:
         1)-when we have two nested divs 
         -and we give parent div padding 
-        -it will margin to the child
+        -it will be margin to the child
 
         2)we will give box-sizing :border-box to all elements:
             *{

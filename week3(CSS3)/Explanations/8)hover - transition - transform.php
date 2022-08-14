@@ -201,5 +201,238 @@ transition:
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 transform:
-    
+   -The transform property applies a 2D or 3D transformation to an element. This property allows you to rotate, scale, move, skew, etc., elements.
+   
+   -The transform property allows you to visually manipulate an element by skewing, rotating, translating, or scaling
+
+    values:
+        rotate(myDegree):
+            -The rotate() method rotates an element clockwise or counter-clockwise according to a given degree.
+
+            -Rotates the element clockwise(if degree is positive) from its current position.
+
+            The following example rotates the <div> element clockwise with 20 degrees:
+                transform: rotate(20deg);
+
+            -Using negative values will rotate the element counter-clockwise.
+            -example:
+                transform: rotate(-20deg);
+            
+
+            Example on hover, transition and transform rotate:
+                index.html:
+                    <div class="test"></div>
+                style.css:
+                    .test{
+                        width: 200px;
+                        height: 200px;
+                        background-color: tomato;
+                        margin: 50px;
+                        transition:transform 2s ; 
+                    }
+
+                    .test:hover{
+                        transform: rotate(45deg);
+                    }
+        ------------------------------------------------------------------------------------------------------------------------------------------------------
+
+        rotateX(degree):
+            -The rotateX() method rotates an element around its X-axis at a given degree
+
+            example:
+                index.html:
+                    <div class="test"></div>
+                style.css:
+                    .test{
+                        width: 200px;
+                        height: 200px;
+                        background-color: tomato;
+                        margin: 50px;
+                        transition:transform 2s ; 
+                    }
+
+                    .test:hover{
+                        transform: rotateX(45deg);
+                    } 
+        ------------------------------------------------------------------------------------------------------------------------------------------------------
+
+        -rotateY(degree):
+            -The rotateX() method rotates an element around its X-axis at a given degree
+
+            example:
+                transform: rotateY(45deg);
+
+        ------------------------------------------------------------------------------------------------------------------------------------------------------
+
+        -rotateZ(degree):
+            -The rotateZ() method rotates an element around its Z-axis at a given degree
+                    
+            example:
+                transform: rotateZ(450deg);
+        ------------------------------------------------------------------------------------------------------------------------------------------------------
+        
+        scale():
+            -The scale() method increases or decreases the size of an element (according to the parameters given for the width and height).
+
+
+            example:
+                transform:scale(2);
+                    -new width = 2 old width
+                    -new height = 2 old height
+                    -we are zooming in
+            example:
+                transform:scale(2,1);
+                    -new width = 2 old width
+                    -new height = 1 old height(no change)
+                    -we are zooming in
+            example:
+                transform:scale(0.5,0.5);
+                    -new width = 0.5 old width
+                    -new height = 0.5 old height
+                    -we are zooming out
+
+            example:
+                index.html:
+                    <div class="test"></div>
+                style.css:
+                    .test{
+                        width: 200px;
+                        height: 200px;
+                        background-color: tomato;
+                        margin: 50px;
+                        transition:transform 3s ; 
+                    }
+
+                    .test:hover{
+                        transform: scale(2);
+                    }
+        ------------------------------------------------------------------------------------------------------------------------------------------------------
+        -scaleX():
+            The scaleX() method increases or decreases the width of an element.
+            example:
+                transform:scaleX(2);
+        ------------------------------------------------------------------------------------------------------------------------------------------------------
+
+        -scaleY():
+            -The scaleX() method increases or decreases the height of an element.
+            example:
+                transform:scaleY(2);
+        ------------------------------------------------------------------------------------------------------------------------------------------------------
+        -translate():
+            -The translate() method moves an element from its current position (according to the parameters given for the X-axis and the Y-axis).
+
+            example:
+                transform: translate(50px, 100px);
+                
+                -moves the element 50 pixels to the right, and 100 pixels down from its current position
+
+            example:
+                transform: translate(-50px, -100px);
+
+                --moves the element 50 pixels to the left, and 100 pixels up from its current position
+        ------------------------------------------------------------------------------------------------------------------------------------------------------
+        -translateX():
+            -The translate() method moves an element along x-axis from its current position 
+
+            example:
+                -transform: translateX(50px);
+        ------------------------------------------------------------------------------------------------------------------------------------------------------
+        -translateY():
+            -The translate() method moves an element along y-axis from its current position 
+
+            example:
+                -transform: translateY(50px);
+        ------------------------------------------------------------------------------------------------------------------------------------------------------
+        
+        -skew():
+            -skews an element along the X-axis and Y-axis by the given angle.
+            -when to use skew:
+                -in web design , there are some div that are skewed a little , they are made by skew without any transition
+        ------------------------------------------------------------------------------------------------------------------------------------------------------
+        -skewX():
+            -skew(مائل/انحراف)
+            -skews an element along the X-axis by the given angle.
+            -transform: skewX(20deg);
+        
+        ------------------------------------------------------------------------------------------------------------------------------------------------------
+        -skewY():
+            -skew(مائل/انحراف)
+            -skews an element along the Y-axis by the given angle.
+            -transform: skewY(20deg);
+    --------------------------------------------------------------------------------------------------------------------------------------------------------------                       
+    difference between scaling and changing width or height themselves:
+        example 1 on changing width height or both on hovering:
+            index.html:
+                <img src="images/mandala-1808239_960_720.png" alt="">
+                <img src="images/mandala-1808239_960_720.png" alt="">
+                <img src="images/mandala-1808239_960_720.png" alt="">
+                <img src="images/mandala-1808239_960_720.png" alt="">
+                <img src="images/mandala-1808239_960_720.png" alt="">
+            style.css:
+                img{
+                    width: 200px;
+                    transition:width 3s, height 3s ; 
+                }
+
+                img:hover{
+                    width: 400px;
+                    height: 400px;
+                }
+            
+            -width and height works on the same layer on the other elements
+            -so when changing width and/or height ,it will affects elements/image beside it (move them away) and affects their location/position
+
+        example2 on changing scaling(width and height) on hovering:
+            index.html:
+                <img src="images/mandala-1808239_960_720.png" alt="">
+                <img src="images/mandala-1808239_960_720.png" alt="">
+                <img src="images/mandala-1808239_960_720.png" alt="">
+                <img src="images/mandala-1808239_960_720.png" alt="">
+                <img src="images/mandala-1808239_960_720.png" alt="">
+            style.css:
+                img{
+                    width: 200px;
+                    transition:transform 3s;
+                }
+
+                img:hover{
+                    transform:scale(2,2)
+                }
+            
+            -scale make a new layer
+            -so when changing scaling (width and/or height) ,it will not affect elements/images beside it
+
+            -elements beside it , will remain in the same position/location
+            -scale acts as zooming
+    --------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+    -applying multiple transforms:
+        -Example:
+            -we want to scale and rotate image on hovering
+
+            index.html:
+                <img src="images/mandala-1808239_960_720.png" alt="">
+                <img src="images/mandala-1808239_960_720.png" alt="">
+                <img src="images/mandala-1808239_960_720.png" alt="">
+                <img src="images/mandala-1808239_960_720.png" alt="">
+                <img src="images/mandala-1808239_960_720.png" alt="">
+            style.html:
+                img{
+                    width: 200px;
+                    transition:transform 3s; 
+                }
+
+                img:hover{
+                    transform: scale(2,2) rotate(360deg);
+                }
+
+    --------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+    -when to use skew:
+        -in web design , there are some div that are skewed a little , they are made by skew without any transition
+
+
+
+
+
 -->

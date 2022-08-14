@@ -271,6 +271,7 @@ relative and absolute:
 Position layer:
     -position :absolute and position: fixed =>make a new layer
     -position :static and position: relative =>don't make a new layer
+    -position:relative  make a new layer ,when we use (left,top, right, bottom) properties.
 
     -so in css we have x(horizontal), y(vertical), z(layer)
 -----------------------------------------------------------------------------------

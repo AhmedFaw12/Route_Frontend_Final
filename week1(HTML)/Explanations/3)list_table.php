@@ -100,7 +100,7 @@ table tag:
         -don't ever use table to divide/design our page theme
         -table is only used to display data/products/ ...
 
-
+    
     Attributes:
         1)border: 
             -border attribute to make a border around table and between columns and rows
