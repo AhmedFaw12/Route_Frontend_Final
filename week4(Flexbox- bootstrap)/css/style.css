@@ -1,0 +1,15 @@
+html{
+    direction: ltr;
+    /* direction: rtl; */
+}
+
+.parent{
+    display: flex;
+    flex-direction: column;
+
+}
+
+.child{
+    width: 20%;
+    height: 100px;
+}
