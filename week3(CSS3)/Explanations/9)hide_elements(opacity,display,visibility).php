@@ -19,7 +19,7 @@ Hide Elements:
     
     -difference between opacity:0 and visibility:hidden :
         -There is a slight difference between visibility: hidden; and opacity: 0;. When clicking on an element with an opacity property of 0, it triggers the click event. Basically, an element with an opacity property of 0 still consumes pointer events (click, mouseover, etc.). However, an element with a visibility property of hidden does’t consume pointer events meaning if we were to click on it, it wouldn’t trigger the click event. This basically means that visibility: hidden; is a mix of opacity: 0; and pointer-events: none;
-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
 

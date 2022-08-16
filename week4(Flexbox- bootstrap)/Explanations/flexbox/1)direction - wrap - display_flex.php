@@ -23,7 +23,7 @@ Flexbox:
 
     -To start using the Flexbox model, you need to first define a flex container/parent element and give it display:flex.
 
-    -properties:
+    -parent properties:
         -display:flex
         -flex-direction
         -flex-wrap
