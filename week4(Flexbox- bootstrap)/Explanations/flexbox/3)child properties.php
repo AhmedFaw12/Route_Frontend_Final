@@ -3,9 +3,13 @@ flexbox(child properties):
     -order
     -flex-grow
     -flex-shrink
+    -align-self
     -flex-basis
     -flex
-    -align-self
+
+
+    =>these properties are given to the flex items (not the flex container/parent)
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 -order property:
     -The order property specifies the order of a flexible item relative to the rest of the flexible items inside the same container.
@@ -131,7 +135,7 @@ flex-grow:
         -if we are not having box-sizing:border-box
         -then remaining width will be :700-500 = 200px
     
-    example:
+    -example:
         index.html:
             
         style.css:

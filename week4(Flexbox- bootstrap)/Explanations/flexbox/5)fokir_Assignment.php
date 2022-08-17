@@ -2,6 +2,7 @@
 Fokir_Assignment(Home section + navbar):
 
     -we want to make header + nav sections
+    assignment_link:http://routeegypt.com/fokir/
 
     Example:
         index.html:

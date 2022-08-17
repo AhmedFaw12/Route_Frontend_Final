@@ -1,0 +1,67 @@
+body{
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+
+/* navbar */
+.logo h2{
+    font-size: 24px;
+    color: #ff305b;
+}
+
+
+.nav-menu ul li a{
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.nav-menu ul li a:hover{
+    color: #ff305b;
+}
+
+/* home/header section */
+header{
+    background-image: url(../images/slider-01.jpg);
+    background-size: cover;
+    background-position: center center;
+}
+
+.layer{
+    background-color: rgba(0,0,0,0.7);
+}
+
+
+.header-content h1{
+    color: #ff305b;
+    font-size: 70px;
+}
+
+.header-content p{
+    font-size: 22px;
+}
+
+
+
+/* media query */
+@media screen and (max-width:800px){
+    
+
+    nav{
+        background-color: rgba(0,0,0,0.7);
+        flex-direction: column;
+    }
+
+    .nav-menu{
+        width: 100% !important;
+    }
+
+    .nav-menu ul{
+        flex-direction: column;
+        align-items: flex-start !important;
+    }
+    .nav-menu ul li{
+        padding: 20px 0;
+    }
+    
+}

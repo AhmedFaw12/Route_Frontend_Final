@@ -142,7 +142,7 @@ align-content property:
     
     -align-content is made/used: 
         -when there are extra spaces for parent (vertically) 
-        -and having multiple lines/rows of childs
+        -and having multiple lines/rows of children
 
     -these extra spaces come when parent has fixed height 
     -and giving fixed height is not good for responsive design
@@ -180,7 +180,7 @@ align-content property:
                 -                        -
                 -                        -
                 --------------------------
-                -if removed the spaces between lines at the center
+                -it removed the spaces between lines at the center
 
         flex-start:	
             -Lines are packed toward the start of the flex container(without leaving any spaces at the top)
