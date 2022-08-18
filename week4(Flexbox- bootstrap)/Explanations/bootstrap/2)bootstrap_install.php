@@ -103,8 +103,6 @@ how to download and install jquery:
             -so that our css file override the bootstrap css
 
 
-
-
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 difference between framework and library:
     -library consists of one file

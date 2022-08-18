@@ -33,9 +33,7 @@ Grid system:
             -row class has also flex-wrap by default
 
             -bootstrap named the padding in the col class :gutter(مذراب/ماسورة)
-            -to remove gutters ,go to div with row class and give another class:no-gutters
-
-            example:
+            -to remove gutters ,go to div with row class and give another class:gx-0
             
         -col:
             -it is the flex item
@@ -44,9 +42,6 @@ Grid system:
 
             -bootstrap named the padding in the col class :gutter(مذراب/ماسورة)
             
-
-
-
             example:
                 col-xl-3 :
                     -in extra large screens , div will take 3 columns from 12, which is 25% width 

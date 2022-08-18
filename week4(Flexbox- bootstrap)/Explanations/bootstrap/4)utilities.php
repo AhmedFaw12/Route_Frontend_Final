@@ -54,7 +54,7 @@ Bootstrap Utilities:
                 }
         
         units:
-            0   ==>0
+            0   ==> 0
             1   ==> $spacer * 0.25
             2   ==> $spacer * 0.5
             3   ==> $spacer * 1
@@ -88,8 +88,8 @@ Bootstrap Utilities:
 
             pt-0 ==> pt-5  :padding top
             pb-0 ==> pb-5  :padding bottom
-            pr-0 ==> pr-5  :padding right
-            pl-0 ==> pl-5  :padding left
+            pe-0 ==> pr-5  :padding right(end)
+            ps-0 ==> pl-5  :padding left
             px-0 ==> px-5  :padding left and right
             py-0 ==> py-5  :padding top and bottom
         margin:
@@ -102,15 +102,15 @@ Bootstrap Utilities:
 
             mt-0 ==>mt-5  :margin top
             mb-0 ==>mb-5  :margin bottom
-            mr-0 ==>mr-5  :margin right
-            ml-0 ==>ml-5  :margin left
+            me-0 ==>mr-5  :margin right(end)
+            ms-0 ==>ml-5  :margin left(start)
             mx-0 ==> mx-5  :margin left and right
             my-0 ==> my-5  :margin top and bottom
 
             mx-auto  :margin auto horizontal (to center divs and elements horizontally)
 
-            ml-auto : left is empty (similar to float:right , but it is not float)
-            ml-auto : right is empty (similar to float:left , but it is not float)
+            ms-auto : left is empty (similar to float:right , but it is not float)
+            me-auto : right is empty (similar to float:left , but it is not float)
     ----------------------------------------------------------------------------------------------------------------------------------------------------------
 
     Borders:
@@ -230,7 +230,14 @@ Bootstrap Utilities:
             align-content-center
             ....
     ----------------------------------------------------------------------------------------------------------------------------------------------------------
-
+    Typography:
+        lead :
+            -it is given to paragraphs
+            -it give p (font-size:1.25rem = 20px, font-weight:300 make it lighter)
+            example:
+                <p class="lead text-muted">HELLO</p>
+                
+    -----------------------------------------------------------------------------------------------------------------------------------------------------------
     -responsive images:
         img-fluid:
             This applies max-width: 100%; and height: auto; to the image so that it scales with the parent width.
@@ -239,6 +246,7 @@ Bootstrap Utilities:
             give an image a rounded 1px border appearance.
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------
+      
 
 -Vs code Extensions:
     -intellisense for css class names in html: to help me auto complete class names
@@ -246,3 +254,4 @@ Bootstrap Utilities:
 
             
 -->
+

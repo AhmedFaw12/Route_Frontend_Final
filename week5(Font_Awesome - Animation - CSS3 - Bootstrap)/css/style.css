@@ -1,0 +1,38 @@
+header{
+    background-image: url("../images/intro-bg.jpg");
+    background-size: cover;
+    background-position: center center;
+}
+
+.icon{
+    width: 32px;
+    height: 32px;
+    border: 1px solid rgba(255,255,255,0.5);
+    transition: border-color 1s;
+}
+
+.color-main{
+    color: #ff206e !important;
+}
+
+.icon:hover{
+    border-color: #ff206e;
+}
+
+
+
+
+.title h2{
+    font-size: 80px;
+    font-weight: 900;
+    color: #f1f1f1;
+}
+.title h3{
+    font-size: 40px;
+    font-weight: 900;
+}
+
+
+#about{
+    background-image: url(../images/light_dot.jpg);
+}

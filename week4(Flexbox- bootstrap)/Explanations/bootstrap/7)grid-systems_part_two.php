@@ -74,7 +74,7 @@ Grid Systems continue:
                     </div>
                 </div>
 
-                -we gave first div offset-3 , so it will leave 3 columns from its left
+        -we gave first div offset-3 , so it will leave 3 columns from its left
         -we can make responsive offset:
             -to apply/change offset in different screens
 
