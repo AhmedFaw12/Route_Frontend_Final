@@ -230,6 +230,18 @@ Bootstrap Utilities:
             align-content-center
             ....
     ----------------------------------------------------------------------------------------------------------------------------------------------------------
+    
+    bootstrap box shadow:
+        Add or remove shadows to elements with box-shadow utilities.
+        classes:
+            shadow-none :No shadow
+            shadow-sm   :small shadow
+            shadow      :regular shadow
+            shadow-lg   :Larger shadow
+        example:
+            <div class="shadow-lg">hello</div>
+    ----------------------------------------------------------------------------------------------------------------------------------------------------------
+
     Typography:
         lead :
             -it is given to paragraphs

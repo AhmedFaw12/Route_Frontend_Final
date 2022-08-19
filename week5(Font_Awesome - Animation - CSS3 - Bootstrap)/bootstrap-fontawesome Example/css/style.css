@@ -36,3 +36,28 @@ header{
 #about{
     background-image: url(../images/light_dot.jpg);
 }
+
+
+
+/* testimonial */
+.carousel-item img{
+    width: 85px;
+    border: solid 2px  #fff;
+    transform: translateY(50%);
+}
+
+.client-feedback{
+    border: 2px solid #f1f1f1;
+}
+
+#testimonial{
+    font-family: 'Segoe UI light', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.carousel .carousel-indicators li{
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background-color: teal;
+    text-indent: 0;
+}
