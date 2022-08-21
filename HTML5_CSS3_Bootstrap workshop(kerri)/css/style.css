@@ -1,0 +1,420 @@
+/*__________________General___________________ */
+.main-color{
+    color: #e65f78 !important;
+}
+
+.main-backgroundColor{
+    background-color: #e65f78 !important;
+}
+
+body{
+    font-family: 'Nunito', sans-serif;
+}
+
+h1,h2,h3,h4,h5,h6{
+    font-family: 'Montserrat', sans-serif;
+}
+
+
+.subtitle{
+    max-width: 500px;
+    margin: auto;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+
+.social-panel .icon{
+    width: 42px;
+    height: 42px;
+ 
+    border-radius: 50%;
+    font-size: 20px;
+    transition:color 0.4s , border-color 0.4s
+}
+
+
+/* navbar */
+.navbar-nav .nav-link.active{
+    color: #e65f78;
+}
+
+.navbar-nav .nav-link:hover{
+    color: #e65f78;
+}
+
+.navbar-nav .nav-link{
+    color: #000;
+}
+
+
+/*______________ home________________*/
+#home{  
+    background-image: url("../images/header-bg.jpg");
+    background-size: cover;
+    background-position: center center;
+}
+
+#home .layer{
+    background-color: rgba(0,0,0,0.7);
+}
+
+h1{
+    font-size:54px;
+}
+
+#home p{
+    color:rgba(255, 255, 255, 0.75);
+    margin-top: 30px ;
+    margin-bottom:30px ;
+}
+
+
+#home button{
+    border: 2px solid #fff;
+    border-radius: 30px;
+    padding: 15px 32px;
+    transition: background-color 0.5s , color 0.5s;
+}
+
+#home button:hover{
+    background-color: white;
+    color: black !important;
+}
+
+#home .scroll{
+    width: 25px;
+    height: 45px;
+    border: 2px solid #fff;
+    border-radius: 30px;    
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: scroll 3s infinite linear;
+    cursor: pointer;
+}
+
+#home .scroll::after{
+    content: "";
+    width: 3px;
+    height: 10px;
+    position: absolute;
+    background-color: #fff;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+
+@keyframes scroll{
+    0%{ bottom: 50px;}
+    10%{ bottom: 100px;}
+    20%{ bottom: 50px;}
+    30%{ bottom: 80px;}
+    40%{ bottom: 50px;}
+    50%{ bottom: 70px;}
+    60%{ bottom: 50px;}
+    70%{ bottom: 60px;}
+    80%{ bottom: 50px;}
+    90%{ bottom: 50px;}
+    100%{ bottom: 50px;}
+}
+
+
+#home .settings{
+    top: 20%;
+    left: 0;
+    padding:10px;
+    background-color:#2b2424;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#home .settings i{
+    font-size: 20px;
+}
+
+
+#home .up-icon{
+    bottom: 30px;
+    right: 40px;
+    padding:5px 10px;
+    background-color:#e65f78;
+    border-radius: 10px;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+
+#home h1::after{
+    content: "";
+    animation: typing 10s linear infinite;
+}
+
+
+@keyframes typing{
+    0%{content: "K|";}
+    1%{content: "Ke|";}
+    2%{content: "Ker|";}
+    3%{content: "Kerr|";}
+    4%{content: "Kerri|";}
+    5%{content: "Kerri |";}
+    6%{content: "Kerri D|";}
+    7%{content: "Kerri Do|";}
+    8%{content: "Kerri Doe|";}
+    9%{content: "Kerri Do|";}
+    10%{content: "Kerri D|";}
+    11%{content: "Kerri |";}
+    12%{content: "Kerri|";}
+    13%{content: "Kerr|";}
+    14%{content: "Ker|";}
+    15%{content: "Ke|";}
+    16%{content: "K|";}
+    17%{content: "|";}
+    18%{content: "A|";}
+    19%{content: "A |";}
+    20%{content: "A P|";}
+    21%{content: "A Ph|";}
+    22%{content: "A Pho|";}
+    23%{content: "A Phot|";}
+    24%{content: "A Photo|";}
+    25%{content: "A Photog|";}
+    26%{content: "A Photogr|";}
+    27%{content: "A Photogra|";}
+    28%{content: "A Photograp|";}
+    29%{content: "A Photograph|";}
+    30%{content: "A Photographe|";}
+    31%{content: "A Photographer|";}
+    32%{content: "A Photographe|";}
+    33%{content: "A Photograph|";}
+    34%{content: "A Photograp|";}
+    35%{content: "A Photogra|";}
+    36%{content: "A Photogr|";}
+    37%{content: "A Photog|";}
+    38%{content: "A Photo|";}
+    39%{content: "A Phot|";}
+    40%{content: "A Pho|";}
+    41%{content: "A Ph|";}
+    42%{content: "A P|";}
+    43%{content: "A |";}
+    44%{content: "A|";}
+    45%{content: "|";}
+    46%{content: "A|";}
+    47%{content: "A |";}
+    48%{content: "A G|";}
+    49%{content: "A Gr|";}
+    50%{content: "A Gra|";}
+    51%{content: "A Grap|";}
+    52%{content: "A Graph|";}
+    53%{content: "A Graphi|";}
+    54%{content: "A Grapic|";}
+    55%{content: "A Grapic |";}
+    56%{content: "A Grapic D|";}
+    57%{content: "A Grapic De|";}
+    58%{content: "A Grapic Des|";}
+    59%{content: "A Grapic Desi|";}
+    60%{content: "A Grapic Desig|";}
+    61%{content: "A Grapic Design|";}
+    62%{content: "A Grapic Designe|";}
+    63%{content: "A Grapic Designer|";}
+    64%{content: "A Grapic Designe|";}
+    65%{content: "A Grapic Design|";}
+    66%{content: "A Grapic Desig|";}
+    67%{content: "A Grapic Desi|";}
+    68%{content: "A Grapic Des|";}
+    69%{content: "A Grapic De|";}
+    70%{content: "A Grapic D|";}
+    71%{content: "A Grapic |";}
+    72%{content: "A Grapic|";}
+    73%{content: "A Grapi|";}
+    74%{content: "A Grap|";}
+    75%{content: "A Gra|";}
+    76%{content: "A Gr|";}
+    77%{content: "A G|";}
+    78%{content: "A |";}
+    79%{content: "A|";}
+    80%{content: "|";}
+    81%{content: "";}
+    82%{content: "";}
+    83%{content: "";}
+    84%{content: "";}
+    85%{content: "";}
+    86%{content: "";}
+    87%{content: "";}
+    88%{content: "";}
+    89%{content: "";}
+    90%{content: "";}
+    91%{content: "";}
+    92%{content: "";}
+    93%{content: "";}
+    94%{content: "";}
+    95%{content: "";}
+    96%{content: "";}
+    97%{content: "";}
+    98%{content: "";}
+    99%{content: "";}
+    100%{content: "";}
+    
+}
+
+
+
+/*______________About________________*/
+#about .social-panel .icon{
+    border: 2px solid rgb(212, 212, 212);
+}
+
+
+
+#about .social-panel .icon:hover{
+    color: #e65f78;
+    border-color: #e65f78;
+}
+
+/*______________Services________________*/
+#services .services-item{
+    border: 1px solid #e8e8e8;
+}
+
+
+#services .services-item .services-line{
+    width: 15%;
+    height: 2px;
+    transition: width  0.5s;
+}
+
+#services .services-item:hover .services-line{
+    width: 20%;
+}
+
+
+/*______________Client________________*/
+.carousel-indicators [data-bs-target]{
+    background-color: #e65f78;
+    opacity: 0.5;
+    width: 12px;
+    height: 6px;
+    border: 1px solid transparent;
+    border-radius: 20px;
+}  
+
+.carousel-indicators .active{
+    background-color:#e65f78;
+    width: 20px;
+    opacity: 1;
+}
+
+
+/*______________Works________________*/
+.nav-pills .nav-link{
+    text-transform: uppercase;
+    color: black;
+    margin-right: 13px;
+    transition: background-color 0.5s , color 0.5s, border-radius 0.5s;
+}
+
+.nav-pills .nav-link.active{
+    background-color: #e65f78;
+    border-radius: 30px;
+}
+
+
+.nav-pills .nav-link:hover{
+    background-color: #e65f78;
+    border-radius: 30px;
+    color: white;
+}
+
+
+#works .layer{
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.7);
+    opacity: 0;
+    transition:opacity 0.5s;
+}
+
+#works .layer p{
+    color: rgba(255, 255, 255, 0.6);
+}
+
+#works .layer .layer-content{
+    transform: translateY(150%);
+    transition:transform 0.5s;
+}
+
+#works .works-item:hover .layer{
+    opacity:1;
+}
+
+#works .works-item:hover .layer .layer-content{
+    transform: translateY(0);
+}
+
+#works .works-item{
+    overflow:hidden;
+    cursor: pointer;
+}
+
+#works .works-item img{
+   transition: transform 0.5s; 
+}
+
+#works .works-item:hover img{
+    transform: scale(1.1);
+}
+
+
+
+/*______________Contact________________*/
+#contact form input{
+    width: 100%;
+    padding: 15px 12px;
+    border: 2px solid rgb(224, 224, 224);
+    border-radius: 5px;
+    transition: border-color 0.3s;
+    font-size: 18px;
+}
+
+#contact form textarea{
+    width: 100%;
+    padding: 15px 12px;
+    border: 2px solid rgb(224, 224, 224);
+    border-radius: 5px;
+    transition: border-color 0.3s;
+    font-size: 18px;
+}
+
+
+#contact form input:focus{
+    outline: none;
+    border-color: #e65f78;
+}
+#contact form textarea:focus{
+    outline: none;
+    border-color: #e65f78;
+}
+
+
+
+/*______________footer________________*/
+footer .social-panel .icon{
+    background-color: rgba(241, 241, 241, 0.08);
+    color: rgb(171, 171, 171);
+    width: 44px;
+    height: 44px;
+    
+}
+
+footer p{
+    color: rgb(171, 171, 171);
+}
+
+footer .social-panel .icon:hover{
+    color: #e65f78;
+}

@@ -118,6 +118,26 @@ Components:
                         background-color: teal;
                         text-indent: 0;
                     }
+        -to change indicators style:
+            -for example we want indicator which is active has bigger width and has full red color while inactive indicators have less width and opacity:0.5
+
+            -if we want to make rounded corners for indicators , it won't work , we have to make border for the indicators first(special case)
+
+            .carousel-indicators [data-bs-target]{
+                background-color: #e65f78;
+                opacity: 0.5;
+                width: 12px;
+                height: 6px;
+                border: 1px solid transparent;
+                border-radius: 20px;
+            }  
+
+            .carousel-indicators .active{
+                background-color:#e65f78;
+                width: 20px;
+                opacity: 1;
+            }
+
 
         -to change position of controls(left and right) and replace arrows with fontawesome icons:
             -we can give left and top, bottom, right to .carousel-control-prev or .carousel-control-next because they have position :absolute
@@ -147,6 +167,201 @@ Components:
             -divs
             -anything
         
+    ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+    Navs and tabs:
+        -we can make nav menu/list vertical or horizontal when we click on list-item , a div or text or .... will appear 
+        -it uses js 
+
+        Example on simple navs with js(default):    
+            <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">Home</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">Profile</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Contact</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="pills-disabled-tab" data-bs-toggle="pill" data-bs-target="#pills-disabled" type="button" role="tab" aria-controls="pills-disabled" aria-selected="false" disabled>Disabled</button>
+                </li>
+            </ul>
+        
+            <div class="tab-content" id="pills-tabContent">
+                <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab" tabindex="0">...</div>
+                <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab" tabindex="0">...</div>
+                <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab" tabindex="0">...</div>
+                <div class="tab-pane fade" id="pills-disabled" role="tabpanel" aria-labelledby="pills-disabled-tab" tabindex="0">...</div>
+            </div>
+        
+        -to add new list-items:
+            -we have to change these attribute in the li tags and put our item-list name:
+                data-bs-target="#pills-home, 
+                aria-controls="pills-home",
+                id="pills-home-tab"
+
+            -we also have to chage these attributes in the tab-pane divs and put our names:
+                pills-home
+                pills-home-tab
+            
+
+            Example:
+                <ul class="nav nav-pills mb-3 d-flex justify-content-center" id="pills-tab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active" id="pills-all-tab" data-bs-toggle="pill" data-bs-target="#pills-all" type="button" role="tab" aria-controls="pills-all" aria-selected="true">all</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="pills-seo-tab" data-bs-toggle="pill" data-bs-target="#pills-seo" type="button" role="tab" aria-controls="pills-seo" aria-selected="false">seo</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="pills-webdesign-tab" data-bs-toggle="pill" data-bs-target="#pills-webdesign" type="button" role="tab" aria-controls="pills-webdesign" aria-selected="false">webdesign</button>
+                    </li>
+                    
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="pills-work-tab" data-bs-toggle="pill" data-bs-target="#pills-work" type="button" role="tab" aria-controls="pills-work" aria-selected="false">work</button>
+                    </li>
+
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="pills-wordpress-tab" data-bs-toggle="pill" data-bs-target="#pills-wordpress" type="button" role="tab" aria-controls="pills-wordpress" aria-selected="false">wordpress</button>
+                    </li>
+                
+                </ul>
+    
+
+                <div class="tab-content" id="pills-tabContent">
+                    <div class="tab-pane fade show active" id="pills-all" role="tabpanel" aria-labelledby="pills-all-tab" tabindex="0">.1.</div>
+                    <div class="tab-pane fade" id="pills-seo" role="tabpanel" aria-labelledby="pills-seo-tab" tabindex="0">.2.</div>
+                    <div class="tab-pane fade" id="pills-webdesign" role="tabpanel" aria-labelledby="pills-webdesign-tab" tabindex="0">.3.</div>
+                    <div class="tab-pane fade" id="pills-work" role="tabpanel" aria-labelledby="pills-work-tab" tabindex="0">.4.</div>
+                    <div class="tab-pane fade" id="pills-wordpress" role="tabpanel" aria-labelledby="pills-wordpress-tab" tabindex="0">.5.</div>
+                </div>
+        
+        to change list items styles:
+            css:
+                .nav-pills .nav-link{
+                    text-transform: uppercase;
+                    color: black;
+                    margin-right: 13px;
+                    transition: background-color 0.5s , color 0.5s, border-radius 0.5s;
+                }
+
+                .nav-pills .nav-link.active{
+                    background-color: #e65f78;
+                    border-radius: 30px;
+                }
 
 
+                .nav-pills .nav-link:hover{
+                    background-color: #e65f78;
+                    border-radius: 30px;
+                    color: white;
+                }
+        -to center list items in the middle of ul, use display-flex, justify-content-center:
+            html:
+                <ul class="nav nav-pills mb-3 d-flex justify-content-center" id="pills-tab" role="tablist">
+                    ...
+                </ul>
+        
+        -to add divs so that when we click on nav link, div(which may contain other divs) will appear:
+            Example:
+            index.html:
+            
+                <div class="tab-content" id="pills-tabContent">
+                    <div class="tab-pane fade show active" id="pills-all" role="tabpanel" aria-labelledby="pills-all-tab" tabindex="0">
+                        <div class="row">
+                            <div class="col-md-4 mb-4">
+                                <div class="works-item position-relative">
+                                    <img src="images/1.jpg" class="w-100 rounded" alt="">
+                                    <div class="layer position-absolute d-flex justify-content-center align-items-center text-center text-white rounded">
+                                        <div class="layer-content">
+                                            <p>Category</p>
+                                            <h4>Project Title</h4>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-4">
+                                <div class="works-item position-relative">
+                                    <img src="images/2.jpg" class="w-100 rounded" alt="">
+                                    <div class="layer position-absolute d-flex justify-content-center align-items-center text-center text-white rounded">
+                                        <div class="layer-content">
+                                            <p>Category</p>
+                                            <h4>Project Title</h4>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-4">
+                                <div class="works-item  position-relative">
+                                    <img src="images/3.jpg" class="w-100 rounded" alt="">
+                                    <div class="layer position-absolute d-flex justify-content-center align-items-center text-center text-white rounded">
+                                        <div class="layer-content">
+                                            <p>Category</p>
+                                            <h4>Project Title</h4>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab" tabindex="0">
+                        --code --
+                    </div>
+                    <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab" tabindex="0">
+                        --code--
+                    </div>
+                    <div class="tab-pane fade" id="pills-disabled" role="tabpanel" aria-labelledby="pills-disabled-tab" tabindex="0">
+                        ---code --- 
+                    </div>
+                </div>
+            style.css:
+                add any style we want
+            
+
+    ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    element triggered Modal:
+        -when we click on element(can be div, img, button, ....) , modal will appear
+        -modal has position fixed
+        
+        -to make modal appear when click on element, give element two attributes:
+            data-bs-toggle="modal" 
+            data-bs-target="#exampleModal":
+                -we will put our modal id
+
+            -to center modal vertically , give child div inside modal div two classes:
+                modal-dialog 
+                modal-dialog-centered 
+
+
+        Example:
+            -we want when click on certain element , we want modal appear to display image
+
+
+            //element to click on
+             <div class="works-item position-relative" data-bs-toggle="modal" data-bs-target="#myModal">
+                <img src="images/1.jpg" class="w-100 rounded" alt="">
+                <div class="layer position-absolute d-flex justify-content-center align-items-center text-center text-white rounded">
+                    <div class="layer-content">
+                        <p>Category</p>
+                        <h4>Project Title</h4>
+                    </div>
+                </div>
+            </div>
+
+            //Modal
+            <div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content ">
+                        <img src="images/1.jpg" class="w-100" alt="">
+                    </div>
+                </div>
+            </div>
+    
 -->
+
+<div>
+
+</div>

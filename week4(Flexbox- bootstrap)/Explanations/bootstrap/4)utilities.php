@@ -248,6 +248,9 @@ Bootstrap Utilities:
             -it give p (font-size:1.25rem = 20px, font-weight:300 make it lighter)
             example:
                 <p class="lead text-muted">HELLO</p>
+
+        fst-italic :
+            -to make text in italic style
                 
     -----------------------------------------------------------------------------------------------------------------------------------------------------------
     -responsive images:

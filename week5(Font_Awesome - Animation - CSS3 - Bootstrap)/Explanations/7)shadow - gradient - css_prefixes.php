@@ -164,6 +164,5 @@ css prefixes:
 
 -->
 
-<div class="test"></div>
 
 
