@@ -61,5 +61,14 @@ js Quotes types:
             
         -in double, single quotes:
             -string can not consists of multiple lines(\n)
+
+    -how to write variable inside strings:
+        using single/double quotes:
+            var age = 10;
+            var name = "Ahmed" + age + "Fawzy";
+        using backtick:
+            var age = 10;
+            var name = `Ahmed ${age} Fawzy`;
+
     
 -->

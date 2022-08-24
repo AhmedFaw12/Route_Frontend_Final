@@ -1,7 +1,41 @@
-// var x = document.getElementById("userName");
-// console.log(x); 
+//get whole inputs tags
+var productName = document.getElementById("productName");
+var productPrice = document.getElementById("productPrice");
+var productCategory = document.getElementById("productCategory");
+var productDesc = document.getElementById("productDesc");
 
-function sayHello(){
-    var userName = document.getElementById("userName").value;
-    window.alert("Hello " + userName);
+// console.log(productName, productPrice, productCategory, productDesc);
+
+//Array
+var productsContainer = [];
+
+function addProduct(){
+    var product = {
+        name: productName.value,
+        price: productPrice.value,
+        category: productCategory.value,
+        desc: productDesc.value
+    }
+
+    productsContainer.push(product);
+    // console.log(productsContainer);
+
+    clearForm();
 }
+
+
+function clearForm(){
+    productName.value = "";
+    productPrice.value = "";
+    productCategory.value = "";
+    productDesc.value = "";
+}
+
+// var productsContainer = [
+//     {name:'nokia', price:9000, category:'mobile', desc:'good'},
+//     {name:'nokia', price:9000, category:'mobile', desc:'good'},
+//     {name:'nokia', price:9000, category:'mobile', desc:'good'},
+//     {name:'nokia', price:9000, category:'mobile', desc:'good'}
+// ];
+
+

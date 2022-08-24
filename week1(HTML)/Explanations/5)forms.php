@@ -7,7 +7,7 @@ Forms:
         -variable: variable to carry the input value
         -value : the value of input that will be saved in variable
         
-
+    
     -input tag:
         -we put input tag inside form tag to take inputs from user
 
@@ -125,6 +125,19 @@ Forms:
             
                 
     --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+    -label tag:
+        uses:
+            1)The for attribute of <label> must be equal to the id attribute of the related element to bind them together.
+            -so when user click on the label , input will be focused
+
+            2)Screen reader users (will read out loud the label, when the user is focused on the element)
+
+        example:
+            <label for="name">UserName</label>
+            <input type="text" id="name">
+
+    --------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     Example on Form:
         <form action="">
             <label>FirstName:</label>
@@ -195,3 +208,4 @@ Forms:
         </form>
 
 --> 
+

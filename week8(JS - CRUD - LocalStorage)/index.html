@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>index</title>
+
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    
+    <div class="w-75 m-auto py-5">
+        <div class="mb-3">
+            <label for="productName" class="mb-2">Product Name</label>
+            <input class="form-control" type="text" name="productName" id="productName">
+        </div>
+        <div class="mb-3">
+            <label  for="productPrice" class="mb-2">Product Price</label>
+            <input class="form-control" type="number" name="productPrice" id="productPrice">
+        </div>
+        <div class="mb-3">
+            <label for="productCategory" class="mb-2">Product Category</label>
+            <input class="form-control" type="text" name="productCategory" id="productCategory">
+        </div>            
+        <div class="mb-3">
+            <label for="productDesc" class="mb-2">Product Description</label>
+            <textarea class="form-control" type="text" name="productDesc" id="productDesc"></textarea>
+        </div>          
+        <button id="mainBtn" onclick="addProduct();" class="btn btn-outline-info">add Product</button>
+    </div>
+
+    
+    <div class="w-75 mx-auto overflow-auto">
+        <input onkeyup="searchProduct(this.value);" type="text" placeholder="Search..." class="form-control w-75 mx-auto" name="searchInput" id="searchInput">
+
+        <table class="table table-bordered table-dark my-5 text-center">
+            <thead>
+                <th>Index</th>
+                <th>ProductName</th>
+                <th>ProductPrice</th>
+                <th>ProductCategory</th>
+                <th>ProductDescription</th>
+                <th>update</th>
+                <th>delete</th>
+            </thead>
+            <tbody id="tableBody">
+
+            </tbody>
+        </table>
+    </div>
+
+
+
+    <script src="js/popper.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

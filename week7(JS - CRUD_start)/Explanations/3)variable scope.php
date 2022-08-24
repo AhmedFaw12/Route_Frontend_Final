@@ -19,7 +19,7 @@ Variable Scope:
             var x = 10; //global
 
         Note:
-            -many global variables consume the ram (slower the code)
+            -many global variables consume the ram (slower the code) (as they are the last thing to be deleted in the code)
 
         Example:
             -if we used var keyword inside a block , it will be treated as a global variable

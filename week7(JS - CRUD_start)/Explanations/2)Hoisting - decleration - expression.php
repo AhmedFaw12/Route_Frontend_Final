@@ -103,7 +103,7 @@ Hoisting:
                 }
                 
             -only declaration(var sum;) will be hoisted at the top of the code
-            -but body: sum = function(x,y){return x + y;} remain in its original places
+            -but body: sum = function(x,y){return x + y;} remain in its original place
         
         Example:
             my code:
@@ -134,7 +134,7 @@ Hoisting:
 
 
             
-        -hoisting is not applied on expression function    
+        -hoisting is not applied on expression function   
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Expression Function(anonymous function):
     -A JavaScript function can also be defined using an expression.
@@ -210,7 +210,7 @@ decleration function(statement function):
                 }
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-Examples(Interview) on decleration and expression functions and :
+Examples(Interview) on decleration and expression functions and Hoisting :
     Example:
         function foo(){
             function bar(){return 3;} //decleration function
@@ -229,6 +229,7 @@ Examples(Interview) on decleration and expression functions and :
                 }
 
                 window.alert(foo()); //8
+                
             -the first bar() function is already on the top
             -the second bar() function will hoisted and became below first bar()
             -then second bar() function will override the first one 

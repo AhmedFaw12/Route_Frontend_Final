@@ -45,7 +45,7 @@ Conditional Statements:
             -so both are equal in value(undefined == null)
             -so it will print Equal as == checks for value equality only
     Example:
-        if(undefined == null){
+        if(undefined === null){
             console.log("Equal");
         }else{
             console.log("Not Equal");
