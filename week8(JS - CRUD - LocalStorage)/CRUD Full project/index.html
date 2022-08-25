@@ -14,36 +14,39 @@
 
 <body class="">
     
-    <div class="w-75 mx-auto py-5">
+    <div class="w-75 m-auto py-5 rounded shadow px-3 my-3">
+        <h1 class="pb-2">CRUD SYSTEM</h1>
+
         <div class="mb-3">
-            <label class="mb-2" for="productName">productName:</label>
+            <label for="productName" class="mb-2">Product Name</label>
             <input class="form-control" type="text" name="productName" id="productName">
         </div>
         <div class="mb-3">
-            <label class="mb-2" for="productPrice">productPrice:</label>
+            <label  for="productPrice" class="mb-2">Product Price</label>
             <input class="form-control" type="number" name="productPrice" id="productPrice">
         </div>
         <div class="mb-3">
-            <label class="mb-2" for="productCategory">productCategory:</label>
+            <label for="productCategory" class="mb-2">Product Category</label>
             <input class="form-control" type="text" name="productCategory" id="productCategory">
-        </div>
+        </div>            
         <div class="mb-3">
-            <label class="mb-2" for="productDesc">productDesc:</label>
+            <label for="productDesc" class="mb-2">Product Description</label>
             <textarea class="form-control" type="text" name="productDesc" id="productDesc"></textarea>
-        </div>
-        <button onclick="addProduct();" class="btn btn-outline-info" id="mainBtn">add Product</button>
+        </div>          
+        <button id="mainBtn" onclick="addProduct();" class="btn btn-outline-info">add Product</button>
     </div>
 
-    <div class="w-75 mx-auto py-5 overflow-auto">
-        <input onkeyup="searchProducts(this.value);" class="w-75 mx-auto form-control shadow" type="text" name="search" id="searchInput" placeholder="search...">
-        
-        <table class="table table-dark table-hover table-bordered text-center mt-4">
+    
+    <div class="w-75 mx-auto my-5 overflow-auto">
+        <input onkeyup="searchProduct(this.value);" type="text" placeholder="Search..." class="form-control w-75 mx-auto" name="searchInput" id="searchInput">
+
+        <table class="table table-bordered table-dark my-5 text-center">
             <thead>
                 <th>Index</th>
                 <th>ProductName</th>
                 <th>ProductPrice</th>
                 <th>ProductCategory</th>
-                <th>ProductDesc</th>
+                <th>ProductDescription</th>
                 <th>update</th>
                 <th>delete</th>
             </thead>
@@ -52,7 +55,7 @@
             </tbody>
         </table>
     </div>
-    
+
     
 
     <script src="js/popper.js"></script>
