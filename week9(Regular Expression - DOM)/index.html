@@ -12,48 +12,75 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body class="">
+<body>
     
-    <div class="w-75 mx-auto py-5">
-        <div class="mb-3">
-            <label class="mb-2" for="productName">productName:</label>
-            <input class="form-control" type="text" name="productName" id="productName">
+    <div class="container py-5">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="item position-relative">
+                    <img src="images/portfolio-1.jpg" class="w-100" alt="">
+                    <div class="img-caption position-absolute text-center">
+                        <h4>item title</h4>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, iste?</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="item position-relative">
+                    <img src="images/portfolio-2.jpg" class="w-100" alt="">
+                    <div class="img-caption position-absolute text-center">
+                        <h4>item title</h4>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, iste?</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="item position-relative">
+                    <img src="images/portfolio-3.jpg" class="w-100" alt="">
+                    <div class="img-caption position-absolute text-center">
+                        <h4>item title</h4>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, iste?</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="item position-relative">
+                    <img src="images/portfolio-1.jpg" class="w-100" alt="">
+                    <div class="img-caption position-absolute text-center">
+                        <h4>item title</h4>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, iste?</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="item position-relative">
+                    <img src="images/portfolio-2.jpg" class="w-100" alt="">
+                    <div class="img-caption position-absolute text-center">
+                        <h4>item title</h4>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, iste?</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="item position-relative">
+                    <img src="images/portfolio-3.jpg" class="w-100" alt="">
+                    <div class="img-caption position-absolute text-center">
+                        <h4>item title</h4>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, iste?</p>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="mb-3">
-            <label class="mb-2" for="productPrice">productPrice:</label>
-            <input class="form-control" type="number" name="productPrice" id="productPrice">
-        </div>
-        <div class="mb-3">
-            <label class="mb-2" for="productCategory">productCategory:</label>
-            <input class="form-control" type="text" name="productCategory" id="productCategory">
-        </div>
-        <div class="mb-3">
-            <label class="mb-2" for="productDesc">productDesc:</label>
-            <textarea class="form-control" type="text" name="productDesc" id="productDesc"></textarea>
-        </div>
-        <button onclick="addProduct();" class="btn btn-outline-info" id="mainBtn">add Product</button>
     </div>
 
-    <div class="w-75 mx-auto py-5 overflow-auto">
-        <input onkeyup="searchProducts(this.value);" class="w-75 mx-auto form-control shadow" type="text" name="search" id="searchInput" placeholder="search...">
-        
-        <table class="table table-dark table-hover table-bordered text-center mt-4">
-            <thead>
-                <th>Index</th>
-                <th>ProductName</th>
-                <th>ProductPrice</th>
-                <th>ProductCategory</th>
-                <th>ProductDesc</th>
-                <th>update</th>
-                <th>delete</th>
-            </thead>
-            <tbody id="tableBody">
-
-            </tbody>
-        </table>
+    <div id="lightBoxContainer" class="justify-content-center align-items-center">
+        <div id="lightBoxItem" class="d-flex align-items-center justify-content-between position-relative">
+            <i id="prev" class="far fa-arrow-alt-circle-left"></i>
+            <i id="close" class="far fa-times-circle"></i>
+            <i id="next" class="far fa-arrow-alt-circle-right"></i>
+        </div>
     </div>
-    
-    
+
 
     <script src="js/popper.js"></script>
     <script src="js/bootstrap.min.js"></script>
