@@ -4,12 +4,14 @@ const productPriceInput = document.getElementById("productPrice");
 const productCategoryInput = document.getElementById("productCategory");
 const productDescInput = document.getElementById("productDesc");
 const mainBtn = document.getElementById("mainBtn");
-const tableBody = document.getElementById("tableBody");
+const productNameAlert = document.getElementById("productNameAlert");
+const productPriceAlert = document.getElementById("productPriceAlert");
+const productCategoryAlert = document.getElementById("productCategoryAlert");
+const productDescAlert = document.getElementById("productDescAlert");
 
-// console.log(productNameInput, productPriceInput, productCategoryInput, productDescInput, mainBtn);
 
 var productsContainer;
-var errors = ``;
+// var errors = ``;
 
 if(localStorage.getItem("productsList") == null){
     productsContainer = [];
@@ -32,12 +34,8 @@ function addProduct(){
         localStorage.setItem("productsList",JSON.stringify(productsContainer) );
         
         displayProducts();
-        // clearForm();
-    }else{
-        document.getElementById("alert").innerHTML = errors;
-        errors = ``;
+        clearForm();
     }
-    
 }
 
 
@@ -141,36 +139,68 @@ function updateProduct(productIndex){
 function validateProductName(){
     var regex = /^[A-Z][a-z]{3,8}$/;
     if(regex.test(productNameInput.value) == true){
+        productNameInput.classList.add("is-valid");     
+        productNameInput.classList.remove("is-invalid");     
+        productNameAlert.classList.replace("d-block", "d-none");
+
         return true;
+    }else{
+        productNameInput.classList.add("is-invalid");
+        productNameInput.classList.remove("is-valid");
+        productNameAlert.classList.replace("d-none", "d-block");
+
+        return false;
     }
-    errors += `<strong>Product Name is Invalid</strong>`
-    return false;
 }
 function validateProductPrice(){
     //from 100 to 8000
     var regex = /^(([1-9][0-9]{2})|([1-7][0-9]{3})|8000)$/;
     if(regex.test(productPriceInput.value) == true){
+        productPriceInput.classList.add("is-valid");     
+        productPriceInput.classList.remove("is-invalid");     
+        productPriceAlert.classList.replace("d-block", "d-none");
         return true;
+    }else{
+        productPriceInput.classList.add("is-invalid");
+        productPriceInput.classList.remove("is-valid");
+        productPriceAlert.classList.replace("d-none", "d-block");
+        return false;
     }
-    errors += `<strong>Product Price is Invalid</strong>`
-    return false;
+    
 }
 function validateProductCategory(){
     var regex = /^[a-z]{3,8}$/;
     if(regex.test(productCategoryInput.value) == true){
+        productCategoryInput.classList.add("is-valid");     
+        productCategoryInput.classList.remove("is-invalid");     
+        productCategoryAlert.classList.replace("d-block", "d-none");
         return true;
+    }else{
+        productCategoryInput.classList.add("is-invalid");
+        productCategoryInput.classList.remove("is-valid");
+        productCategoryAlert.classList.replace("d-none", "d-block");
+        return false;
     }
-    errors += `<strong>Product Category is Invalid</strong>`
-    return false;
 }
 function validateProductDesc(){
     var regex = /^[A-Za-z]{3,3000}$/;
     if(regex.test(productDescInput.value) == true){
+        productDescInput.classList.add("is-valid");     
+        productDescInput.classList.remove("is-invalid");     
+        productDescAlert.classList.replace("d-block", "d-none");
         return true;
+    }else{
+        productDescInput.classList.add("is-invalid");
+        productDescInput.classList.remove("is-valid");
+        productDescAlert.classList.replace("d-none", "d-block");
+        return false;
     }
-    errors += `<strong>Product Description is Invalid</strong>`
-    return false;
 }
 
+
+productNameInput.addEventListener("keyup", validateProductName);
+productPriceInput.addEventListener("keyup", validateProductPrice);
+productCategoryInput.addEventListener("keyup", validateProductCategory);
+productDescInput.addEventListener("keyup", validateProductDesc);
 
 

@@ -31,59 +31,55 @@ Regular Expression with inputs:
         -we will make rest of product fields validationss
 
         -then if inputs not valid, error message will appear 
-        -we will make an error string variable to hold all errorss
+        
         
         index.html:
-            <div class="alert alert-danger" id="alert">
-                
+            <div class="w-75 mx-auto py-5 rounded shadow px-3 my-3">
+                <h1 class="pb-2">CRUD SYSTEM</h1>
+
+                <div class="mb-3">
+                    <label class="mb-2" for="productName">productName:</label>
+                    <input class=" my-1 form-control" type="text" name="productName" id="productName">
+
+                    <div id="productNameAlert" class="d-none alert alert-danger">
+                        <strong>productName must start with Capital and then 3 to 8</strong>
+                    </div>
+
+                </div>
+                <div class="mb-3">
+                    <label class="mb-2" for="productPrice">productPrice:</label>
+                    <input class="my-1 form-control" type="number" name="productPrice" id="productPrice">
+
+                    <div id="productPriceAlert" class="d-none alert alert-danger">
+                        <strong>productPrice must in range between (100 - 8000)</strong>
+                    </div>
+
+                </div>
+                <div class="mb-3">
+                    <label class="mb-2" for="productCategory">productCategory:</label>
+                    <input class="my-1 form-control" type="text" name="productCategory" id="productCategory">
+
+                    <div id="productCategoryAlert" class="d-none alert alert-danger">
+                        <strong>productCategory must be from 3 to 8 small letters</strong>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label class="mb-2" for="productDesc">productDesc:</label>
+                    <textarea class="form-control" type="text" name="productDesc" id="productDesc"></textarea>
+
+                    <div id="productDescAlert" class="d-none alert alert-danger">
+                        <strong>productDescription must be from 3 to 3000 small or capital letters</strong>
+                    </div>
+
+                </div>
+                <button onclick="addProduct();" class="btn btn-outline-info" id="mainBtn">add Product</button>
             </div>
 
         main.js:
-            var errors = ``;
-
-            function validateProductName(){
-                var regex = /^[A-Z][a-z]{3,8}$/;
-                if(regex.test(productNameInput.value) == true){
-                    return true;
-                }
-                errors += `<strong>Product Name is Invalid</strong>`
-                return false;
-            }
-            function validateProductPrice(){
-                //from 100 to 8000
-                var regex = /^(([1-9][0-9]{2})|([1-7][0-9]{3})|8000)$/;
-                if(regex.test(productPriceInput.value) == true){
-                    return true;
-                }
-                errors += `<strong>Product Price is Invalid</strong>`
-                return false;
-            }
-            function validateProductCategory(){
-                var regex = /^[a-z]{3,8}$/;
-                if(regex.test(productCategoryInput.value) == true){
-                    return true;
-                }
-                errors += `<strong>Product Category is Invalid</strong>`
-                return false;
-            }
-            function validateProductDesc(){
-                var regex = /^[A-Za-z]{3,3000}$/;
-                if(regex.test(productDescInput.value) == true){
-                    return true;
-                }
-                errors += `<strong>Product Description is Invalid</strong>`
-                return false;
-            }
-
-            function checkInputs(){
-                if(productNameInput.value != "" && productPriceInput.value != "" 
-                && productCategoryInput.value != "" && productDescInput.value != ""){
-                    return true;
-                }
-                errors += `<strong>all fields are required</strong>`
-                return false;
-            }
-
+            const productNameAlert = document.getElementById("productNameAlert");
+            const productPriceAlert = document.getElementById("productPriceAlert");
+            const productCategoryAlert = document.getElementById("productCategoryAlert");
+            const productDescAlert = document.getElementById("productDescAlert");
 
             function addProduct(){
                 if(checkInputs() == true && validateProductName() == true && validateProductPrice() && validateProductCategory() && validateProductDesc()){
@@ -98,13 +94,83 @@ Regular Expression with inputs:
                     localStorage.setItem("productsList",JSON.stringify(productsContainer) );
                     
                     displayProducts();
-                    // clearForm();
+                    clearForm();
+                }
+            }
+
+            function validateProductName(){
+                var regex = /^[A-Z][a-z]{3,8}$/;
+                if(regex.test(productNameInput.value) == true){
+                    productNameInput.classList.add("is-valid");     
+                    productNameInput.classList.remove("is-invalid");     
+                    productNameAlert.classList.replace("d-block", "d-none");
+
+                    return true;
                 }else{
-                    document.getElementById("alert").innerHTML = errors;
-                    errors = ``;
+                    productNameInput.classList.add("is-invalid");
+                    productNameInput.classList.remove("is-valid");
+                    productNameAlert.classList.replace("d-none", "d-block");
+
+                    return false;
+                }
+            }
+            function validateProductPrice(){
+                //from 100 to 8000
+                var regex = /^(([1-9][0-9]{2})|([1-7][0-9]{3})|8000)$/;
+                if(regex.test(productPriceInput.value) == true){
+                    productPriceInput.classList.add("is-valid");     
+                    productPriceInput.classList.remove("is-invalid");     
+                    productPriceAlert.classList.replace("d-block", "d-none");
+                    return true;
+                }else{
+                    productPriceInput.classList.add("is-invalid");
+                    productPriceInput.classList.remove("is-valid");
+                    productPriceAlert.classList.replace("d-none", "d-block");
+                    return false;
                 }
                 
             }
+            function validateProductCategory(){
+                var regex = /^[a-z]{3,8}$/;
+                if(regex.test(productCategoryInput.value) == true){
+                    productCategoryInput.classList.add("is-valid");     
+                    productCategoryInput.classList.remove("is-invalid");     
+                    productCategoryAlert.classList.replace("d-block", "d-none");
+                    return true;
+                }else{
+                    productCategoryInput.classList.add("is-invalid");
+                    productCategoryInput.classList.remove("is-valid");
+                    productCategoryAlert.classList.replace("d-none", "d-block");
+                    return false;
+                }
+            }
+            function validateProductDesc(){
+                var regex = /^[A-Za-z]{3,3000}$/;
+                if(regex.test(productDescInput.value) == true){
+                    productDescInput.classList.add("is-valid");     
+                    productDescInput.classList.remove("is-invalid");     
+                    productDescAlert.classList.replace("d-block", "d-none");
+                    return true;
+                }else{
+                    productDescInput.classList.add("is-invalid");
+                    productDescInput.classList.remove("is-valid");
+                    productDescAlert.classList.replace("d-none", "d-block");
+                    return false;
+                }
+            }
 
+
+            productNameInput.addEventListener("keyup", validateProductName);
+            productPriceInput.addEventListener("keyup", validateProductPrice);
+            productCategoryInput.addEventListener("keyup", validateProductCategory);
+            productDescInput.addEventListener("keyup", validateProductDesc);
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-blur:
+    -The onblur event occurs when an object loses focus.
+
+    -The onblur event is most often used with form validation code (e.g. when the user leaves a form field).
+
+    -Tip: The onblur event is the opposite of the onfocus event.
 
 -->

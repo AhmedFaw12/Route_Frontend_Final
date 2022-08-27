@@ -191,7 +191,12 @@ Regex:
         ------------------------------------------------------------------------------------------------------------------------------------------------------
         The wildcard ( . ):
             The wildcard represents any character(letters , symbols, numbers ,...)
-            
+        --------------------------------------------------------------------------------------------------------------------------------------------------------
+        /s : any whitespace characters (space, tab, etc.) ==>/ /
+        /S : any non-whitespace characters(anything except space)
+        /w : any word (alpha-numeric) =same as=> /[0-9a-zA-z_]/
+        /d : any digit character ==> [0-9]
+        /D : any non-digit characters
     --------------------------------------------------------------------------------------------------------------------------------------------------------------
 
     Examples on Regular Expressions:
@@ -205,10 +210,11 @@ Regex:
                 -5 for we
             -then 8 numbers
             
-            var x = /^(002)?01[0125][0-9]{8}$/
+            var x = /^(\+2|002)?01[0125][0-9]{8}$/
 
             -0114432345 ==>match
             -0020114432345 ==>match
+            -+20114432345 ==>match
             -0020020114432345 ==> not match
         
         Example:

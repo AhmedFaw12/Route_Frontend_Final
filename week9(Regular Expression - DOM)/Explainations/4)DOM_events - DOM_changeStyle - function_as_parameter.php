@@ -152,12 +152,40 @@ DOM_events:
                 }); 
             note:
                 -screen starts from the top of the tabs of the browser
+        --------------------------------------------------------------------------------------------------------------------------------------------------------
+        keyCode:
+            -Get the Unicode value of the pressed keyboard key
+            -every keyboard key has a value:
+                ArrowRight ==> 39
+                ArrowLeft ==>37
+                Enter ==>13
+                Esc ==>27
+
+            -this property is depricated
+            -we should use key property
+        --------------------------------------------------------------------------------------------------------------------------------------------------------
+        key:
+            -The key property returns the identifier(name) of the key that was pressed when a key event occured.
+
+            -Key identifiers are strings that identify keyboard buttons. The return value of this property can be a string of:
+
+                -A single character (like "a", "W", "4", "+" or "$")
+                -A multicharacter (like "F1", "Enter", "HOME" or "CAPS LOCK")
+            
+            -it doesn't get the "shift" , "Alt", "Ctrl" , "meta"
+
+            -Tip: If you want to find out whether the "ALT", "CTRL", "META" or "SHIFT" key was pressed when a key event occured, use the altKey, ctrlKey, metaKey or shiftKey property.
+            
+            Note: This property is read-only.
+
+
+        
     ----------------------------------------------------------------------------------------------------------------------------------------------------------------
 
     What are the available events:
         -click:
             (لما ادوس و اسيب ايدى من على الماوس)
-        -bdlclick: 
+        -dblclick: 
             -The ondblclick event occurs when the user double-clicks on an element.
         -mousemove:
             -The onmousemove event occurs when the pointer is moving while it is over an element.
@@ -211,7 +239,14 @@ DOM_events:
 
             -it is the inverse of mousemove
             -Note:
-                -hover is mousemove + mouseleave 
+                -hover is mousemove + mouseleave
+        -blur:
+            -The onblur event occurs when an object loses focus.
+
+            -The onblur event is most often used with form validation code (e.g. when the user leaves a form field).
+
+            -Tip: The onblur event is the opposite of the onfocus event.
+            
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 DOM_ChangeStyles:

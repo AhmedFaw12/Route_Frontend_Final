@@ -7,7 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>index</title>
 
-    <link rel="stylesheet" href="css/all.min.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
@@ -17,25 +16,40 @@
     <div class="w-75 mx-auto py-5 rounded shadow px-3 my-3">
         <h1 class="pb-2">CRUD SYSTEM</h1>
 
-        <div class="alert alert-danger" id="alert">
-            
-        </div>
-
         <div class="mb-3">
             <label class="mb-2" for="productName">productName:</label>
-            <input class="form-control" type="text" name="productName" id="productName">
+            <input class=" my-1 form-control" type="text" name="productName" id="productName">
+
+            <div id="productNameAlert" class="d-none alert alert-danger">
+                <strong>productName must start with Capital and then 3 to 8</strong>
+            </div>
+
         </div>
         <div class="mb-3">
             <label class="mb-2" for="productPrice">productPrice:</label>
-            <input class="form-control" type="number" name="productPrice" id="productPrice">
+            <input class="my-1 form-control" type="number" name="productPrice" id="productPrice">
+
+            <div id="productPriceAlert" class="d-none alert alert-danger">
+                <strong>productPrice must in range between (100 - 8000)</strong>
+            </div>
+
         </div>
         <div class="mb-3">
             <label class="mb-2" for="productCategory">productCategory:</label>
-            <input class="form-control" type="text" name="productCategory" id="productCategory">
+            <input class="my-1 form-control" type="text" name="productCategory" id="productCategory">
+
+            <div id="productCategoryAlert" class="d-none alert alert-danger">
+                <strong>productCategory must be from 3 to 8 small letters</strong>
+            </div>
         </div>
         <div class="mb-3">
             <label class="mb-2" for="productDesc">productDesc:</label>
             <textarea class="form-control" type="text" name="productDesc" id="productDesc"></textarea>
+
+            <div id="productDescAlert" class="d-none alert alert-danger">
+                <strong>productDescription must be from 3 to 3000 small or capital letters</strong>
+            </div>
+
         </div>
         <button onclick="addProduct();" class="btn btn-outline-info" id="mainBtn">add Product</button>
     </div>
@@ -61,8 +75,6 @@
     
     
 
-    <script src="js/popper.js"></script>
-    <script src="js/bootstrap.min.js"></script>
     <script src="js/main.js"></script>
 </body>
 
