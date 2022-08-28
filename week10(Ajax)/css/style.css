@@ -1,3 +1,10 @@
 body{
     font-family: "segoe ui light";
+    background-color: #313131;
+    color: #fff;
+}
+
+.vote{
+    top: 0;
+    right: 20px;
 }
