@@ -323,7 +323,18 @@ Example on detecting multiple keydown pressed at once:
             keys.c = false;
         }
     });
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+Array.from():
+    -The Array.from() method returns an Array object from any object with a length property or any iterable object.
+        -NodeList to array
+        -string to array
+        -map to array
+        -set to array
+        - ...
 
-    
+    Example:
+        const myArr = Array.from("ABCDEFG");
+        console.log(myArr); //[A,B,C,D,E,F,G]
+
 -->

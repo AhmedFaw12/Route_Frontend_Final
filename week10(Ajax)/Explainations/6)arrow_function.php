@@ -130,5 +130,6 @@ Arrow Function:
         -convert inner function to arrow function 
         -when using arrow function, this here will refer to the object
 
-
+    -NOTE:
+        -arrow functions are not hoisted
 -->

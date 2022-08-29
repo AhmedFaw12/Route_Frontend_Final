@@ -117,7 +117,9 @@ AJAX:
                     -404: "Page not found" (url is not correct)
 
                 -onreadystatechange property:
-                	-Defines a function to be called when the readyState property changes:
+                    -The readystatechange event is fired whenever the readyState property of the XMLHttpRequest changes.
+                	
+                    -Defines a function to be called when the readyState property changes:
 
                     -The onreadystatechange property defines a function to be executed when the readyState changes.
 

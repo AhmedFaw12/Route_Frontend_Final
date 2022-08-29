@@ -8,7 +8,7 @@ HTTP Methods:
     
 Display Data:
     -response is returned as a string(like local Storage)
-    -so we need to convert to string to array of objects/object using json.parse()
+    -so we need to convert from string to array of objects/object using json.parse()
 
     Example:
         index.html:
