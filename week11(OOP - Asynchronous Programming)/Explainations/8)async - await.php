@@ -65,13 +65,23 @@ async - await:
             console.log("Belhanna");
         }
 
-        async function printAll(){
+        console.log("1");
+        (async function printAll(){
             await getSalad();
             await getPasta();
             await getPizza();
 
             endMenu();
             console.log("hello");
-        }
-        printAll();//salad ==>pasta ==>pizza ==>Belhanna ==>hello
+        }()
+        console.log("2");
+        
+        //output:
+            1
+            2
+            salad 
+            pasta 
+            pizza 
+            Belhanna 
+            hello
 -->

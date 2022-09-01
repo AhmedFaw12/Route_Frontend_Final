@@ -1,0 +1,50 @@
+html{
+    height: 100%;
+}
+
+body{
+    font-family: "Titillium Web", sans-serif;
+    background: rgb(36, 53, 63);
+    height: 100%;
+}
+
+#div-form{
+    box-shadow: 5px 10px 54px black;
+}
+
+h1{
+    color: #17a2b8;
+}
+
+a:hover{
+    color: #fff !important;
+    text-decoration: none;
+}
+
+input::placeholder{
+    color: gainsboro !important;
+}
+
+input:focus{
+    background-color: transparent;
+}
+
+#div-form a:hover{
+    text-decoration-line: underline !important;
+}
+
+
+/* home */
+.home-massage {
+    background-color: #24353f;
+    box-shadow: -5px 2px 54px -9px rgb(0 0 0);
+    padding: 48px;
+}
+
+.bg-main{
+    background: rgb(36, 53, 63);
+}
+
+.shadow-main{
+    box-shadow: 0px 2px 54px black;   
+}
