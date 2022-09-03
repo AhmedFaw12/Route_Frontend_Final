@@ -1,0 +1,14 @@
+html{
+    height: 100%;
+}
+body{
+    font-family: "segoe ui light";
+    height: 100%;
+}
+
+.test{
+    width: 400px;
+    height: 400px;
+    background-color: #09c;
+    /* display:none; */
+}

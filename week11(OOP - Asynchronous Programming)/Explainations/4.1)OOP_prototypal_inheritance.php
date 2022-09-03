@@ -66,7 +66,7 @@ hasOwnProperty() object method:
         console.log(ali.hasOwnProperty("friends")); //false
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-Object.getPropertyOf() method:
+Object.getPrototypeOf() method:
 
     -__proto__ property is depricated
         
@@ -106,7 +106,7 @@ Object.getPropertyOf() method:
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Prototypal Inheritance(prototypal chain):
-    -All JavaScript objects inherit properties and methods from a prototype its parent
+    -All JavaScript objects inherit properties and methods from a prototype of its parent
     -The Object.prototype is on the top of the prototype inheritance chain
 
     -Object is a built-in object

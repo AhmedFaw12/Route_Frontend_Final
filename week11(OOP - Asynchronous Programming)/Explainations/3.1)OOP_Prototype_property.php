@@ -45,5 +45,5 @@ Prototype Property:
             -we should create properties inside constructor function(prototype object) using this 
             -and we should create all methods outside constructor function using prototype property
 
-
+            -prototype property is what oop prototype - based has better performance
 -->
