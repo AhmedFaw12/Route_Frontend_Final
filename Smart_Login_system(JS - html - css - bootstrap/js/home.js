@@ -1,21 +1,22 @@
-// variables
+//variables
 const userName = document.getElementById("userName");
 const logoutBtn = document.getElementById("logoutBtn");
-let sessionUserName = localStorage.getItem("sessionUserName");
+let currentUser = JSON.parse(localStorage.getItem("userSession"));
 
-
+//events
 window.addEventListener("load", displayWelcomeUser);
 logoutBtn.addEventListener("click", logout);
 
+//functions
 function displayWelcomeUser(){
-    userName.innerHTML = `Welcome ${sessionUserName}`;
+    if(currentUser == null){
+        userName.innerHTML = `No user`;
+    }else{
+        userName.innerHTML = `Welcome ${currentUser.name}`;
+    }
 }
 
 function logout(){
-    localStorage.removeItem("sessionUserName");
-    location.replace("index.html");
-
+    localStorage.removeItem("userSession");
+    window.location.replace("index.html");
 }
-
-
-

@@ -1,49 +1,44 @@
 // variables
-const emailInput = document.getElementById("email");
-const passwordInput = document.getElementById("password");
+const userEmailInput = document.getElementById("email");
+const userPasswordInput = document.getElementById("password");
 const loginBtn = document.getElementById("loginBtn");
+const fillMsg = document.getElementById("fillMsg");
 const wrongMsg = document.getElementById("wrongMsg");
 
-let users ;
-if(localStorage.getItem("usersList") == null){
-    users = [];
-}else{
-    users = JSON.parse(localStorage.getItem("usersList"));
-}
-
+let usersList = []; 
 //events
 loginBtn.addEventListener("click", login);
 
 //functions
-function login(){
-    if(isEmptyInputs()){
-        let fillMsg = document.getElementById("fillMsg");
-        fillMsg.classList.replace("d-none", "d-block");
-        return;
-    }
-    let email = emailInput.value;
-    let password = passwordInput.value;
-
-    for(let i = 0 ; i < users.length; i++){
-        if(users[i].email.toLowerCase() == email.toLowerCase() 
-        && users[i].password.toLowerCase() == password.toLowerCase()){
-            localStorage.setItem("sessionUserName", users[i].name);  
-            loginBtn.setAttribute("href", "home.html"); 
-        }else{            
-            wrongMsg.classList.replace("d-none", "d-block");
-        }
-    }
+if(localStorage.getItem("usersList") != null){
+    usersList = JSON.parse(localStorage.getItem("usersList"));
 }
 
-function isEmptyInputs(){
-    if(emailInput.value == "" || passwordInput.value == ""){
+function login(){
+    if(isInputEmpty()){
+        fillMsg.classList.replace("d-none", "d-block");
+        wrongMsg.classList.replace("d-block", "d-none");
+        return;
+    }
+
+    for(let i = 0 ; i < usersList.length; i++){
+        if(usersList[i].email.toLowerCase() == userEmailInput.value.toLowerCase()
+        && usersList[i].password.toLowerCase() == userPasswordInput.value.toLowerCase())
+        {
+            localStorage.setItem("userSession", JSON.stringify(usersList[i]));
+            window.location.href = "home.html";
+            fillMsg.classList.replace("d-block", "d-none");
+            wrongMsg.classList.replace("d-block", "d-none");
+            return;
+        }    
+    }
+    fillMsg.classList.replace("d-block", "d-none");
+    wrongMsg.classList.replace("d-none", "d-block");
+}
+
+function isInputEmpty(){
+    if(userEmailInput.value == "" || userPasswordInput.value == ""){
         return true;
     }
     return false;
-}
-
-function clearForm(){
-    nameInput.value = "";
-    emailInput.value = "";
-    passwordInput.value = "";
 }
