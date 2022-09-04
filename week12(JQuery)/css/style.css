@@ -1,14 +1,26 @@
+*{
+    border: 3px solid red;
+    padding:15px ;
+}
+
+
 html{
     height: 100%;
 }
 body{
     font-family: "segoe ui light";
+    background-color: #ccc;
     height: 100%;
 }
 
-.test{
-    width: 400px;
-    height: 400px;
+
+
+
+/* .test{
+    width: 100px;
+    height: 100px;
     background-color: #09c;
-    /* display:none; */
-}
+    padding: 10px;
+    border: 10px solid red;
+    margin: 10px;
+} */
