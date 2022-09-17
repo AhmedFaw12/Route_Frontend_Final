@@ -15,7 +15,7 @@ JQuery:
         -HTML event methods
         -AJAX
         -Utilities
-
+ 
     -Many of the biggest companies on the Web use jQuery, such as:
         Google
         Microsoft

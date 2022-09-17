@@ -101,7 +101,7 @@ jQuery stop() Method:
 
         -The optional goToEnd parameter specifies whether or not to complete the current animation immediately. Default is false.
 
-        -So, by default, the stop() method kills the current animation being performed on the selected element.
+        -So, by default, the stop() method kills the current animation being performed on the selected element. but the rest of animations will continue
 
     Example:
         -with no parameters
@@ -125,6 +125,9 @@ jQuery stop() Method:
             $("#stopBtn").click(function(){
                 $(".test").stop();
             });
+
+            -only current animation will be stopped, but rest of animations will continue
+            
     Example with stopAll:
         html:
             <button id="myBtn" class="btn btn-danger">click</button>

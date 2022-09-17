@@ -62,7 +62,7 @@ jQuery html(setters & getters):
     text(), html(), and val():
         -html() :
             - Sets or returns the content of selected elements (including HTML markup)
-            -like innerHTML
+            - like innerHTML
 
             Example:
                 html:

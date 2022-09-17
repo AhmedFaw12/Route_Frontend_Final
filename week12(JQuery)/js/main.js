@@ -18,12 +18,25 @@
 // $("#demo").find("*").css("borderColor", "green");//div, h1, p, all spans
 
 
-$("span").eq(0).css("borderColor", "green"); //get first span ok1
-$("span").eq(1).css("borderColor", "green");//ok2
-$("span").eq(2).css("borderColor", "green"); // special
+// $("span").eq(0).css("borderColor", "green"); //get first span ok1
+// $("span").eq(1).css("borderColor", "green");//ok2
+// $("span").eq(2).css("borderColor", "green"); // special
 
-$("span").not(".test").css("borderColor", "green"); // ok1 ,ok2, special , ok3, ok5
+// $("span").not(".test").css("borderColor", "green"); // ok1 ,ok2, special , ok3, ok5
+
+
+$("#myBtn").click(function(){
+    $(".test").animate({width:"100%"}, 2000);
+    $(".test").animate({height:"500px"}, 2000);
+    $(".test").animate({borderRadius:"50%"}, 2000);
+
+    $(".test").addClass("shadow-lg bg-danger");
+});
 
 
 
+
+$("#stopBtn").click(function(){
+    $(".test").stop(true, true);
+});
 
