@@ -4,6 +4,43 @@ $(document).ready(function () {
     $("body").css("overflow", "auto");
   });
 
+  //fire owl carousel
+  $(".owl-carousel").owlCarousel({
+    items: 3,
+    margin: 30,
+    loop:true,
+    dots: true,
+    dotsEach:1,
+    autoplay:true,
+    autoplayTimeout:4000
+  });
+
+
+  //particles js
+  particlesJS.load('particles-js', 'js/particles.json', function() {
+    console.log('callback - particles.js config loaded');
+  });
+
+
+  // typed.js plugin
+  var typed = new Typed('.element', {
+    strings: ['This is a JavaScript library', 'This is an ES6 module'],
+    typeSpeed: 30,
+    backSpeed: 30,
+    loop: true,
+    smartBackspace: true // Default value
+  });
+
+
+  //wow.js plugin
+  new WOW().init();
+
+
+  //skitter slider plugin
+  $(function() {
+    $('.skitter-large').skitter();
+  });
+
   //scroll - offset
   let aboutOffset = $("#about").offset().top;
   $(window).on("scroll", function () {
