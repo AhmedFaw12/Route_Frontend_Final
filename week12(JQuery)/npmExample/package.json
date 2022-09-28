@@ -1,0 +1,25 @@
+{
+  "name": "npm_test_example",
+  "version": "2.0.0",
+  "description": "simple project for learning npm",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "testnpm",
+    "learning",
+    "npm",
+    "node.js",
+    "learning"
+  ],
+  "author": "Ahmed Fawzy",
+  "license": "ISC",
+  "dependencies": {
+    "jquery": "^3.6.1",
+    "popper.js": "^1.16.1"
+  },
+  "devDependencies": {
+    "live-server": "^1.2.2"
+  }
+}
