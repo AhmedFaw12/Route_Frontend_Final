@@ -70,7 +70,8 @@ $(document).ready(function () {
   $(".nav-link").click(function (eventInfo) {
     let sectionId = $(eventInfo.target).attr("href");
     let sectionOffset = $(sectionId).offset().top;
-
+    $("li a").removeClass("active");
+    $(this).addClass("active"); 
     $('html, body').animate({ scrollTop: sectionOffset }, 1000);
   });
 

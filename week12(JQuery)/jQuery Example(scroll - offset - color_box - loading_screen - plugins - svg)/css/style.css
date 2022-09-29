@@ -3,10 +3,10 @@ body {
     font-family: 'segoe ui light';
     overflow: hidden;
 }
-
-.linkActive {
+/* active link */
+.navbar-dark .navbar-nav .nav-item .active {
     font-weight: 900 !important;
-
+    color: #ff206e !important;
 }
 
 h1 {
