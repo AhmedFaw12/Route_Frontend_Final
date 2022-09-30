@@ -1,0 +1,28 @@
+<!-- <h1 class="text-danger">Home Component</h1>
+
+<h2>welcome {{userName}} back</h2>
+<img [src]='imgSrc' alt="">
+<i class="fab fa-facebook fa-2x"></i>
+<p>home works!</p>
+
+<div class="w-50 p-4">
+  <input (keyup.t)="test($event)" type="text" class="form-control">
+</div>
+
+<button (click)="welcome($event)" class="btn btn-outline-danger">hello</button> -->
+
+
+<!-- <h2 [class.bg-danger]="productPrice > 3000" > hello</h2> -->
+<!-- <h2 [style.color]='onSale == true ? "red":"green"' > hello</h2> -->
+
+<!-- <div class="w-50 p-4 m-auto">
+    <input [(ngModel)]="x" type="text" class="form-control">
+    <h2>{{x}}</h2>
+</div> -->
+
+<h2 *ngIf="productPrice > 11000; else hambozo">web design and development</h2>
+
+
+<ng-template #hambozo>
+    <h2>Hi Hi</h2>
+</ng-template>
