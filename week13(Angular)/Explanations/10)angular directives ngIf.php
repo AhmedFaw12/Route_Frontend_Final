@@ -8,6 +8,7 @@ Angular Directives:
         -*ngIf directive takes boolean expression
         -if true => element appear
         -if false => element disappear , we can make another element appear by using else and ng-template
+        -*ngIf directive allows me to make if condition inside html
 
         Example:
             we want to display h2 , if product price > 3000

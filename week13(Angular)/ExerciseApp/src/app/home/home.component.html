@@ -20,9 +20,44 @@
     <h2>{{x}}</h2>
 </div> -->
 
-<h2 *ngIf="productPrice > 11000; else hambozo">web design and development</h2>
+<!-- <h2 *ngIf="productPrice > 11000; else hambozo">web design and development</h2>
 
 
 <ng-template #hambozo>
     <h2>Hi Hi</h2>
+</ng-template> -->
+
+
+<!-- <ul class="p-4">
+  <li *ngFor = 'let friend of friends'> {{friend}}</li>
+</ul> -->
+
+
+<h2>{{user}}</h2>
+<h2>{{user.name}}</h2>
+
+<table *ngIf="users.length > 0 ; else hambozo" class="table w-75 m-auto table-hover table-dark table-striped table-bordered text-center">
+  <thead>
+    <th>index</th>
+    <th>name</th>
+    <th>age</th>
+    <th>gender</th>
+    <th>salary</th>
+    <th>dateOfBirth</th>
+  </thead>
+  <tbody>
+    <tr *ngFor="let user of users; let i = index">
+      <td>{{i}}</td>
+      <td>{{user.name}}</td>
+      <td>{{user.age}}</td>
+      <td>{{user.gender}}</td>
+      <td>{{user.salary}}</td>
+      <td>{{user.dateOfBirth}}</td>
+    </tr>
+  </tbody>
+</table>
+
+
+<ng-template #hambozo>
+    <h2 class="text-center">Sorry No Data</h2>
 </ng-template>
