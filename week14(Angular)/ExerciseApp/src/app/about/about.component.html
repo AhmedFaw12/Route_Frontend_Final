@@ -1,0 +1,34 @@
+<div class="jumbotron">
+  <h1 class="display-4">About, world!</h1>
+  <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured
+    content or information.</p>
+  <hr class="my-4">
+  <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+  <table *ngIf="aboutUsers.length > 0 ; else hambozo"
+    class="table w-75 m-auto table-hover table-dark table-striped table-bordered text-center">
+    <thead>
+      <th>index</th>
+      <th>name</th>
+      <th>age</th>
+      <th>gender</th>
+      <th>salary</th>
+      <th>dateOfBirth</th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of aboutUsers; let i = index">
+        <td>{{i+1}}</td>
+        <td>{{user.name}}</td>
+        <td>{{user.age}}</td>
+        <td>{{user.gender}}</td>
+        <td>{{user.salary}}</td>
+        <td>{{user.dateOfBirth}}</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <ng-template #hambozo>
+    <h2 class="text-center">Sorry No Data</h2>
+  </ng-template>
+
+</div>
