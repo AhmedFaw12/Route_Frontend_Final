@@ -1,4 +1,4 @@
-<table *ngIf="homeUsers.length > 0 ; else hambozo" class="table w-75 m-auto table-hover table-dark table-striped table-bordered text-center">
+<!-- <table *ngIf="homeUsers.length > 0 ; else hambozo" class="table w-75 m-auto table-hover table-dark table-striped table-bordered text-center">
   <thead>
     <th>index</th>
     <th>name</th>
@@ -22,4 +22,15 @@
 
 <ng-template #hambozo>
     <h2 class="text-center">Sorry No Data</h2>
-</ng-template>
+</ng-template> -->
+
+
+<div class="container-fluid">
+  <div class="row">
+    <div *ngFor="let movie of trendingMovies" class="col-md-3">
+      <img [src]="imgPrefix + movie.poster_path" class="w-100" alt="">
+      <h5>{{movie.title}}</h5>
+      <p>{{movie.overview}}</p>
+    </div>
+  </div>
+</div>
