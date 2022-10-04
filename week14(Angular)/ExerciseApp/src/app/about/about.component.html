@@ -17,11 +17,11 @@
     <tbody>
       <tr *ngFor="let user of aboutUsers; let i = index">
         <td>{{i+1}}</td>
-        <td>{{user.name}}</td>
+        <td>{{user.name|gender:user.gender}}</td>
         <td>{{user.age}}</td>
         <td>{{user.gender}}</td>
-        <td>{{user.salary}}</td>
-        <td>{{user.dateOfBirth}}</td>
+        <td>{{user.salary|currency:"EUR"}}</td>
+        <td>{{user.dateOfBirth|date}}</td>
       </tr>
     </tbody>
   </table>

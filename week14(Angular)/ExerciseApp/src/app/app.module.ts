@@ -13,6 +13,9 @@ import { ProjectsComponent } from './projects/projects.component';
 import { NotfoundComponent } from './notfound/notfound.component';
 
 import { HttpClientModule } from '@angular/common/http';
+import { HelloPipe } from './hello.pipe';
+import { GenderPipe } from './gender.pipe';
+import { SeemorePipe } from './seemore.pipe';
 
 @NgModule({
   declarations: [
@@ -23,7 +26,10 @@ import { HttpClientModule } from '@angular/common/http';
     FooterComponent,
     NavbarComponent,
     ProjectsComponent,
-    NotfoundComponent
+    NotfoundComponent,
+    HelloPipe,
+    GenderPipe,
+    SeemorePipe
   ],
   imports: [
     BrowserModule,
