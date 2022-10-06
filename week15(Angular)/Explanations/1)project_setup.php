@@ -120,7 +120,7 @@ Project setup:
             ng g c people --skip-tests
             ng g c navbar --skip-tests
             ng g c notfound --skip-tests
-    
+    ------------------------------------------------------------------------------------------------------------------------------------------------------------
     -then go to angular.json to link our libraries and styles:
         "styles": [
             "./node_modules/bootstrap/scss/bootstrap.scss",
@@ -139,6 +139,64 @@ Project setup:
         -with any changes in angular.json we need to run project again using:
             ng serve --open
 
+    ------------------------------------------------------------------------------------------------------------------------------------------------------------
+    -we need to make all global styles of our project:
+        -every website has somethings global
+        -for example:
+            -all pages have same background color, same font-family, same color
+            -all buttons have same style
+            -all links are same in style
+
+        -we receive styles file from designer written in scss
+        -in scss we can make variables 
+
+        -we will put our global styles in styles.scss:
+            styles.scss:
+                /* You can add global styles to this file, and also import other style files */
+                @import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@300&display=swap');
+
+                $bgColor:#131722;
+                $lightBgColor:#24baef;
+                $bgTransparent:rgba(36,186,239,.6) ;
+                $fontColor:#fff;
+                $borderColor:#a8a8a83d;
+                $borderHeight:1px;
+                $secondFontColor:#949cb0;
+
+
+                body{
+                font-family: 'Montserrat Alternates', sans-serif;
+                background-color: $bgColor;
+                color: $fontColor;
+                }
+
+                a,.navlink{
+                font-size: 18px !important;
+                color: $fontColor !important;
+                text-decoration: none !important;
+                }
+
+                a:hover{
+                font-size: 18px;
+                color: $fontColor;
+                text-decoration: none;
+                }
+
+
+    ------------------------------------------------------------------------------------------------------------------------------------------------------------
+    -go to assets:
+        -make images folder and put images inside it
+        webp images:
+            -it is a modern image format
+            -it is an image extension
+            -webp is one of the best extensions that works with web
+            -it makes small sized images and good resolution
+            -so we should convert our images to (.webp)
+
+            -Using .webp, webmasters and web developers can create smaller, richer images that make the web faster
+            -.webp is one of the best image extension that work in web
+
+    ------------------------------------------------------------------------------------------------------------------------------------------------------------
     -then we need to make routing:
         app-routing.module.ts:
             import { AboutComponent } from './about/about.component';
@@ -164,17 +222,76 @@ Project setup:
             {path:"register", component:RegisterComponent},
             {path:"**", component:NotfoundComponent},
             ];
-    -go to assets:
-        -make images folder and put images inside it
-        webp images:
-            -it is a modern image format
-            -it is an image extension
-            -webp is one of the best extensions that works with web
-            -it makes small sized images and good resolution
-            -so we should convert our images to (.webp)
-            -. Using WebP, webmasters and web developers can create smaller, richer images that make the web faster
-            
+
+    
+        -go to navbar component and adjust links :
+            -replace all href with routerLink 
+
+            navbar.component.html:
+                <nav class="navbar navbar-expand-lg ">
+                    <div class="container-fluid">
+                        <a class="navbar-brand" routerLink="home">Noxe</a>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                        </button>
+
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                                <li class="nav-item">
+                                <a class="nav-link" routerLink="home">Home</a>
+                                </li>
+                                <li class="nav-item">
+                                <a class="nav-link" routerLink="about">About</a>
+                                </li>
+                                <li class="nav-item">
+                                <a class="nav-link" routerLink="movies">Movies</a>
+                                </li>
+                                <li class="nav-item">
+                                <a class="nav-link" routerLink="tv">Tv shows</a>
+                                </li>
+                                <li class="nav-item">
+                                <a class="nav-link" routerLink="network">Network</a>
+                                </li>
+                                <li class="nav-item">
+                                <a class="nav-link" routerLink="people">people</a>
+                                </li>
+
+                            </ul>
+                            <form class="d-flex" role="search">
+                                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                            </form>
+                            <div class="social-media me-4">
+                                <i class="fab mx-2 fa-facebook"></i>
+                                <i class="fab mx-2 fa-spotify"></i>
+                                <i class="fab mx-2 fa-instagram"></i>
+                                <i class="fab mx-2 fa-youtube"></i>
+                            </div>
+
+                            <ul class="navbar-nav  mb-2 mb-lg-0">
+                                <li class="nav-item">
+                                <a class="nav-link" routerLink="login">Login</a>
+                                </li>
+                                <li class="nav-item">
+                                <a class="nav-link" routerLink="register">Register</a>
+                                </li>
+                                <li class="nav-item">
+                                <a class="nav-link">Logout</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+
+    ------------------------------------------------------------------------------------------------------------------------------------------------------------
+    
     -go to app.component.html:
+        -we put fixed components: navbar , footer if we have footer
+        -and we put router-outlet tag
+        
+        app.component.html:
+            <app-navbar></app-navbar>
+            <router-outlet></router-outlet>
+
         
 
 -->
