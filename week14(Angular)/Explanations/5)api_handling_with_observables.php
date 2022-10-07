@@ -9,8 +9,14 @@ Api:
         -angular made HttpClient class 
         -it has all methods to deal with APIs:
             -get:
-                -method is an asynchronous method that performs an HTTP get request in Angular applications and returns an Observable
-            -post
+                -method is an asynchronous method that performs an HTTP get request in Angular applications and returns an Observable response
+            -post:
+                -take two paramters:
+                    -api url
+                    -object to be sent
+                -it returns observable response
+                -this response may be a success message
+                -or it may be error 
             -put
             -patch
             -delete

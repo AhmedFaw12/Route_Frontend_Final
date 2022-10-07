@@ -150,6 +150,47 @@ Reactive forms:
                 - It makes sure that we are not seeing null and undefined values in our application when we want to access properties of an object.
                 
                 -The Angular safe navigation operator, ?, guards against null and undefined values in property paths.
+    ------------------------------------------------------------------------------------------------------------------------------------------------------------
+    Conclusion:
+        -to make reactive form, we import reactiveFormsModule and add it to imports array in app.module.ts
+        -then go to our form component ts file , import FormGroup, FormControl, Validators class 
+        -make object from formGroup, then pass js object to the constructor containings objects made from FormControl class
+        -for every object made from FormControl class, we will pass to the constructor null initial value and array containing validation rules 
+        -these validation rules are static methods inside validators class
+        
+        -this object we made from FormGroup contains properties that prepare a report for my Form:
+            -value:
+                -object containing all values entered for every input
+            -valid:
+                -boolean value means that our form is valid
+            -invalid:
+                -boolean value means that our form is invalid
+            -formControls:
+                -object contains all our formControls objects
+                -for each formControl object we have:
+                    -touched:
+                        -boolean value means that we touched our input(focus on input then blur)
+                    -errors:
+                        -object contains errors of my formControl object
+                        -this object contains key value pairs
+                        -key is our error name and value is a error description string
+        -also object made from FormGroup has method called (get) to get any FormControl object inside it
+        
+        -then we make our html form
+        -then we bind our html form with formGroup object using (formGroup) attribute using property binding and then pass name of formGroup object
+
+        -then we bind every html input with every FormControl object created using formControlName attribute without property binding and pass name of formControl object
+        
+        -then we make real time validation inisde html form using *ngIf directive with FormGroup object report properties
+
+        -then we submit form:
+            -we make button with type="submit"
+            -angular has event called (ngSubmit), we write this event in the form tag
+            -ngSubmit will be called when we click on the button with type="submit"
+            -we will bind function made in ts file to ngSubmit event using event binding
+            -so that this function will be called when we submit form
+            -in this function we will submit the formGroup.value object to the register api
+            -we don't have to send our FormGroup object as a parameter to the function called by ngSubmit event, as it is the same object in the ts file
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Full Example on Reactive form:

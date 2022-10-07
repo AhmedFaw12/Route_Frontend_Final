@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { AuthService } from '../auth.service';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-register',
@@ -7,6 +10,12 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./register.component.scss']
 })
 export class RegisterComponent implements OnInit {
+
+  type:string = "password";
+  error:string = '';
+  constructor(private _AuthService:AuthService, private _Router:Router) {
+
+  }
 
   registerForm:FormGroup = new FormGroup({
     first_name:new FormControl(null,
@@ -21,19 +30,31 @@ export class RegisterComponent implements OnInit {
        [Validators.required, Validators.pattern("^[A-Z][a-z0-9]{3,8}$")]),
   });
 
-  submitRegisterForm(registerForm:FormGroup){
-    console.log(registerForm.value);
-  }
 
-  type:string = "password";
-  changeAppearance():void{
+
+  changePasswordAppearance():void{
     if(this.type == "password"){
       this.type="text";
     }else{
       this.type="password";
     }
   }
-  constructor() { }
+
+
+  submitRegisterForm(registerForm:FormGroup){
+    this._AuthService.register(registerForm.value).subscribe((response)=>{
+      if(response.message =="success"){
+          this._Router.navigate(["/login"]);
+          //success ,go to login
+
+      }else{
+
+        //error
+        this.error = response.errors.email.message; 
+      }
+    });
+
+  }
 
   ngOnInit(): void {
   }

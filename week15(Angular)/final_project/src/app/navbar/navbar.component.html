@@ -7,22 +7,22 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link" routerLink="home">Home</a>
+          <a *ngIf="isLogin" class="nav-link" routerLink="home">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLink="about">About</a>
+          <a *ngIf="isLogin" class="nav-link" routerLink="about">About</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLink="movies">Movies</a>
+          <a *ngIf="isLogin" class="nav-link" routerLink="movies">Movies</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLink="tv">Tv shows</a>
+          <a *ngIf="isLogin" class="nav-link" routerLink="tv">Tv shows</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLink="network">Network</a>
+          <a *ngIf="isLogin" class="nav-link" routerLink="network">Network</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLink="people">people</a>
+          <a *ngIf="isLogin" class="nav-link" routerLink="people">people</a>
         </li>
 
       </ul>
@@ -38,13 +38,13 @@
 
       <ul class="navbar-nav mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link" routerLink="login">Login</a>
+          <a *ngIf="!isLogin" class="nav-link" routerLink="login">Login</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLink="register">Register</a>
+          <a *ngIf="!isLogin" class="nav-link" routerLink="register">Register</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link">Logout</a>
+          <a *ngIf="isLogin" (click)="isLogout()" style="cursor:pointer" class="nav-link">Logout</a>
         </li>
       </ul>
     </div>

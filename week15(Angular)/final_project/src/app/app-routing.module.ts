@@ -9,17 +9,18 @@ import { NotfoundComponent } from './notfound/notfound.component';
 import { PeopleComponent } from './people/people.component';
 import { RegisterComponent } from './register/register.component';
 import { TvComponent } from './tv/tv.component';
+import { AuthGuard } from './auth.guard';
 
 const routes: Routes = [
 
   {path:"", redirectTo:"home", pathMatch:"full"},
-  {path:"home", component:HomeComponent},
-  {path:"about", component:AboutComponent},
-  {path:"movies", component:MoviesComponent},
-  {path:"tv", component:TvComponent},
-  {path:"network", component:NetworkComponent},
-  {path:"people", component:PeopleComponent},
-  {path:"login", component:LoginComponent},
+  {path:"home", canActivate:[AuthGuard], component:HomeComponent},
+  {path:"about", canActivate:[AuthGuard], component:AboutComponent},
+  {path:"movies", canActivate:[AuthGuard], component:MoviesComponent},
+  {path:"tv", canActivate:[AuthGuard], component:TvComponent},
+  {path:"network", canActivate:[AuthGuard], component:NetworkComponent},
+  {path:"people", canActivate:[AuthGuard], component:PeopleComponent},
+  {path:"login",  component:LoginComponent},
   {path:"register", component:RegisterComponent},
   {path:"**", component:NotfoundComponent},
 ];
