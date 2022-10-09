@@ -46,6 +46,6 @@ Example:
 
     navbar.component.html:
         <li class="nav-item">
-          <a *ngIf="isLogin" (click)="isLogout()" class="nav-link">Logout</a>
+          <a *ngIf="isLogin" (click)="isLogout()" style="cursor:pointer" class="nav-link">Logout</a>
         </li>
 -->

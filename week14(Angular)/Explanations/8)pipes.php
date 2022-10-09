@@ -52,7 +52,25 @@ Pipe:
 
             Example:
                 <td>{{user.dateOfBirth|date}}</td>
+        
+        5)DecimalPipe:
+            -This pipe is used for transformation of decimal numbers.
 
+            -The first argument is a format string of the form 
+            ”{minIntegerDigits}. {minFractionDigits}-{maxFractionDigits}
+
+            Example:
+                {{movie.vote_average |number:'1.1-1'}}
+
+                -o/p :
+                    7.4
+                    or
+                    3.3
+                -it will take minIntegarDigits:1 ,it can take more than 1
+                -it will take minFractionDigits:1
+                -it will take maxFractionDigits:1
+                
+                
     ------------------------------------------------------------------------------------------------------------------------------------------------------------
 
     Custom pipes:
@@ -131,7 +149,7 @@ Pipe:
             gender.pipe.ts:
                 transform(name:string, gender:string):string {
                     if(gender == "male"){
-                        return `Mr ${name}`;
+                        return `Mr ${name}`; 
                     }else{
                         return `Mrs ${name}`;
                     }

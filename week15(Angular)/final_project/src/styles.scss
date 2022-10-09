@@ -1,5 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@300&display=swap');
+@import '~ngx-owl-carousel-o/lib/styles/scss/owl.carousel';
+@import '~ngx-owl-carousel-o/lib/styles/scss/owl.theme.default';
+
 
 $bgColor:#131722;
 $lightBgColor:#24baef;
@@ -16,14 +19,33 @@ body{
   color: $fontColor;
 }
 
-a,.navlink{
+a, a:hover, .navlink{
   font-size: 18px !important;
   color: $fontColor !important;
   text-decoration: none !important;
 }
 
-a:hover{
-  font-size: 18px;
-  color: $fontColor;
-  text-decoration: none;
+
+.brdr
+{
+  height: 1px;
+  background-color: $borderColor;
 }
+
+.second-color{
+  color: $secondFontColor;
+}
+
+.bg-color{
+  background-color: $bgColor;
+}
+
+.vote{
+  background-color: $lightBgColor;
+  padding: 5px;
+  font-weight: 700;
+  position: absolute;
+  top: 0;
+  right: 10px;
+}
+
