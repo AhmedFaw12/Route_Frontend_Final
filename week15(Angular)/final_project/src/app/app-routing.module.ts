@@ -10,6 +10,7 @@ import { PeopleComponent } from './people/people.component';
 import { RegisterComponent } from './register/register.component';
 import { TvComponent } from './tv/tv.component';
 import { AuthGuard } from './auth.guard';
+import { MoviedetailsComponent } from './moviedetails/moviedetails.component';
 
 const routes: Routes = [
 
@@ -20,6 +21,7 @@ const routes: Routes = [
   {path:"tv", canActivate:[AuthGuard], component:TvComponent},
   {path:"network", canActivate:[AuthGuard], component:NetworkComponent},
   {path:"people", canActivate:[AuthGuard], component:PeopleComponent},
+  {path:"moviedetails/:id", canActivate:[AuthGuard], component:MoviedetailsComponent},
   {path:"login",  component:LoginComponent},
   {path:"register", component:RegisterComponent},
   {path:"**", component:NotfoundComponent},

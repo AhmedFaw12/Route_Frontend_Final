@@ -12,11 +12,11 @@ export class NavbarComponent implements OnInit {
   constructor(private _AuthService:AuthService) {
       this._AuthService.currentUser.subscribe(() =>{
 
-      if(this._AuthService.currentUser.getValue() != null){
-        this.isLogin = true;
-      }else{
-        this.isLogin = false;
-      }
+        if(this._AuthService.currentUser.getValue() != null){
+          this.isLogin = true;
+        }else{
+          this.isLogin = false;
+        }
     });
   }
 

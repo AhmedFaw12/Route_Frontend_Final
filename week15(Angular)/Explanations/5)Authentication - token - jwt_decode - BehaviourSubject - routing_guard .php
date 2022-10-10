@@ -58,9 +58,9 @@ Authentication - routing guard:
                 -next() : to receive a value (to put data inside observable)
                 -getValue() :
                     - to get value of behaviourSubject
-                    -to get the current value
-                    -we can use it without/with subscribe
-                    -if we used it without subscribe ,it will get it one time only
+                    - to get the current value
+                    - we can use it without/with subscribe
+                    - if we used it without subscribe ,it will get it one time only
 
 
             -How to use BehaviourSubject obversable:

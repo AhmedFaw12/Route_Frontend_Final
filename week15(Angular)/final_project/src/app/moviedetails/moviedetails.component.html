@@ -1,0 +1,20 @@
+<div class="container py-5">
+  <div class="row ">
+    <div class="col-md-4 mb-4">
+      <img class="w-100" [src]="imgPrefix+movieDetails?.poster_path" alt="">
+    </div>
+    <div class="col-md-8 ">
+      <div>
+        <h3 >{{movieDetails?.title}}</h3>
+        <h4 class="mb-4 second-color">{{movieDetails?.tagline}}</h4>
+        <span class="genre " *ngFor="let genre of movieDetails?.genres">{{genre.name}}</span>
+        <p >Vote : {{movieDetails?.vote_average|number:'1.1-1'}}</p>
+        <p >Vote count : {{movieDetails?.vote_count}}</p>
+        <p >Revenue : {{movieDetails?.revenue|currency:"USD":'symbol':'1.0-0'}}</p>
+        <p >Release Date : {{movieDetails?.release_date|date:"yyyy-MM-dd"}}</p>
+
+        <p class="f-18 second-color">{{movieDetails?.overview}}</p>
+      </div>
+    </div>
+  </div>
+</div>

@@ -20,6 +20,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { NotfoundComponent } from './notfound/notfound.component';
 import { PeopleComponent } from './people/people.component';
 import { HomeheaderComponent } from './homeheader/homeheader.component';
+import { MoviedetailsComponent } from './moviedetails/moviedetails.component';
 
 
 @NgModule({
@@ -35,7 +36,8 @@ import { HomeheaderComponent } from './homeheader/homeheader.component';
     NavbarComponent,
     NotfoundComponent,
     PeopleComponent,
-    HomeheaderComponent
+    HomeheaderComponent,
+    MoviedetailsComponent
   ],
   imports: [
     BrowserModule,
