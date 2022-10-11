@@ -1,0 +1,28 @@
+$mainColor:#09c;
+$secondColor:tomato;
+$mainWidth:50px;
+$height:200px;
+
+.parent
+{
+    @for $i from 1 to 11{
+        .child#{$i}{
+            width: $mainWidth + ($i * 50);
+            height: 20px;
+            background-color: rgba($color: $mainColor, $alpha: $i/10);
+        }
+    }
+}
+
+
+h1{
+    color: $mainColor;
+}
+
+button{
+    background-color: $mainColor;
+}
+
+p{
+    color: $mainColor;
+}

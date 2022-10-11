@@ -16,7 +16,7 @@
           <a *ngIf="isLogin" class="nav-link" routerLink="movies">Movies</a>
         </li>
         <li class="nav-item">
-          <a *ngIf="isLogin" class="nav-link" routerLink="tv">Tv shows</a>
+          <a *ngIf="isLogin" class="nav-link" routerLink="tv">Tv</a>
         </li>
         <li class="nav-item">
           <a *ngIf="isLogin" class="nav-link" routerLink="network">Network</a>
@@ -24,16 +24,17 @@
         <li class="nav-item">
           <a *ngIf="isLogin" class="nav-link" routerLink="people">people</a>
         </li>
-
       </ul>
+
       <form class="d-flex" role="search">
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
       </form>
-      <div class="social-media me-4">
-        <i class="fab mx-2 fa-facebook"></i>
-        <i class="fab mx-2 fa-spotify"></i>
-        <i class="fab mx-2 fa-instagram"></i>
-        <i class="fab mx-2 fa-youtube"></i>
+
+      <div class="social-media">
+        <i class="fab me-2 fa-facebook"></i>
+        <i class="fab me-2 fa-spotify"></i>
+        <i class="fab me-2 fa-instagram"></i>
+        <i class="fab me-2 fa-youtube"></i>
       </div>
 
       <ul class="navbar-nav mb-2 mb-lg-0">
@@ -45,6 +46,9 @@
         </li>
         <li class="nav-item">
           <a *ngIf="isLogin" (click)="isLogout()" style="cursor:pointer" class="nav-link">Logout</a>
+        </li>
+        <li class="nav-item">
+          <a *ngIf="isLogin"  class="nav-link" routerLink="settings">Settings</a>
         </li>
       </ul>
     </div>

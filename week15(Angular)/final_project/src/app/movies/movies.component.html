@@ -1,1 +1,9 @@
 <p>movies works!</p>
+
+
+<div class="mb-2 p-3">
+  <label class="mb-2" for="test">Testing ngOnChange</label>
+  <input type="text" [(ngModel)] = "x" id="test" class="form-control">
+</div>
+
+<app-tv [title]="x"></app-tv>
