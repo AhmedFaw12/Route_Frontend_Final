@@ -4,7 +4,7 @@ $height:200px;
 
 $floatLeft:left;
 $floatRight:right;
-$direction:ltr;
+$direction:rtl;
 
 @if($direction =="rtl"){
     $floatLeft:right;
@@ -59,7 +59,7 @@ html{
 
 
 h1{
-    font-size:60px; 
+    font-size:calcRem(100)rem; 
     color: $mainColor;
     @include animat(all, 2s);
 }

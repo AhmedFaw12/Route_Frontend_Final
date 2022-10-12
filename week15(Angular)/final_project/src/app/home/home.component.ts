@@ -9,10 +9,10 @@ import { MoviesService } from '../movies.service';
 })
 export class HomeComponent implements OnInit, OnDestroy {
 
+  imgPrefix:string = "https://image.tmdb.org/t/p/w500";
   trendingMovies:any[] = [];
   trendingTv:any[] = [];
   trendingPeople:any[] = [];
-  imgPrefix:string = "https://image.tmdb.org/t/p/w500";
 
   moviesSub:any;
   tvSub:any;
@@ -21,13 +21,13 @@ export class HomeComponent implements OnInit, OnDestroy {
   constructor(private _MoviesService:MoviesService) {}
 
   ngOnInit(): void {
-    this.moviesSub = this._MoviesService.getTrending("movie").subscribe((response)=>{
+    this.moviesSub = this._MoviesService.getTrending("movie", 1).subscribe((response)=>{
       this.trendingMovies = response.results.slice(0,10);
     });
-    this.tvSub = this._MoviesService.getTrending("tv").subscribe((response)=>{
+    this.tvSub = this._MoviesService.getTrending("tv", 1).subscribe((response)=>{
       this.trendingTv = response.results.slice(0,10);
     });
-    this.peopleSub = this._MoviesService.getTrending("person").subscribe((response)=>{
+    this.peopleSub = this._MoviesService.getTrending("person", 1).subscribe((response)=>{
       this.trendingPeople = response.results.slice(0,10);
     });
   }

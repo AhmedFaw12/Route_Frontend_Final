@@ -1,9 +1,45 @@
-<p>movies works!</p>
+<div class="container">
+  <select (change)="getPage($event)">
+    <option class="" *ngFor="let page of pages" [value]="page">{{page}}</option>
+  </select>
+
+  <div class="w-50 m-auto">
+    <label for="searchMovie">Movies Search</label>
+    <input id="searchMovie" type="text" class="form-control my-2" placeholder="Search for a Movie" [(ngModel)] = 'word'>
+  </div>
+
+  <div class="row py-5">
+    <div class="col-md-4 d-flex align-items-center">
+      <div>
+        <div class="brdr w-25 mb-4"></div>
+        <h2>Trending Movies <br/> to watch Right Now</h2>
+        <p class="second-color my-2">Most watched Movies by days</p>
+        <div class="brdr w-75 mt-4"></div>
+      </div>
+    </div>
+
+    <div *ngFor="let movie of trendingMovies|search:word" class="col-md-2">
+      <div class="movie my-2 position-relative">
+        <a [routerLink]="['/moviedetails', movie.id]">
+          <img [src]="imgPrefix + movie.poster_path" class="w-100" [alt]="movie.title">
+          <h3 class="my-2 h6">{{movie.title}}</h3>
+
+          <div class="vote">
+            {{movie.vote_average |number:'1.1-1'}}
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+
+</div>
 
 
-<div class="mb-2 p-3">
+
+
+<!-- <div class="mb-2 p-3">
   <label class="mb-2" for="test">Testing ngOnChange</label>
   <input type="text" [(ngModel)] = "x" id="test" class="form-control">
 </div>
 
-<app-tv [title]="x"></app-tv>
+<app-tv [title]="x"></app-tv> -->

@@ -1,0 +1,19 @@
+{
+  "name": "sass_example",
+  "version": "1.0.0",
+  "description": "learn sass",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "scss":"node-sass --watch styles.scss styles.css"
+  },
+  "keywords": [
+    "sass",
+    "learn"
+  ],
+  "author": "ahmed fawzy",
+  "license": "ISC",
+  "dependencies": {
+    "node-sass": "^7.0.3"
+  }
+}

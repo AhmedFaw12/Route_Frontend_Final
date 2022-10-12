@@ -21,6 +21,7 @@ import { NotfoundComponent } from './notfound/notfound.component';
 import { PeopleComponent } from './people/people.component';
 import { HomeheaderComponent } from './homeheader/homeheader.component';
 import { MoviedetailsComponent } from './moviedetails/moviedetails.component';
+import { SearchPipe } from './search.pipe';
 
 
 @NgModule({
@@ -37,7 +38,8 @@ import { MoviedetailsComponent } from './moviedetails/moviedetails.component';
     NotfoundComponent,
     PeopleComponent,
     HomeheaderComponent,
-    MoviedetailsComponent
+    MoviedetailsComponent,
+    SearchPipe
   ],
   imports: [
     BrowserModule,
