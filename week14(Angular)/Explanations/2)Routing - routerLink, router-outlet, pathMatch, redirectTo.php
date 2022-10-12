@@ -76,6 +76,24 @@ Routing:
 
             -routerLink = "home" is same as (window.location.href = "home.html) in js
 
+        4)routerLinkActive: 
+            -angular directive
+            -it takes a class or array of string classes
+            -when we click on link and become active , these classes are applied on the active link
+            -we need property binding when passing array of classes
+
+             Example:
+                <li class="nav-item">
+                    <a class="nav-link" routerLink = "home" [routerLinkActive]="['bg-danger', 'text-uppercase']">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink = "about" [routerLinkActive]="['bg-danger', 'text-uppercase']">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink = "projects" [routerLinkActive]="['bg-danger', 'text-uppercase']">Projects</a>
+                </li>
+
+
         -note1:
             -when we open website for first time, it will give me an error
             -because we don't have path in the url(path is empty)
