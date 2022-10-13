@@ -10,8 +10,21 @@ Production:
     -production steps:
         1)go to index.html:
             <base href="./">
+
         
             -put . before / 
+            -The <base> tag specifies the base URL 
+            -we put /home, /about, .... after domain name(https://final_project/)
+            -put we are not putting project inside public_html folder directly
+            -we will put our files inside another folder for example : app2
+            -if we left <base href="/"> this means when user write /home, routing will put path after this slash : https://final_project/home
+            -it will produce error 
+            -we need to tell route to put path after (final_project/app2/)
+            -we need to write final_project/app2/home
+            -so we put (./) as our base url which means current working directory 
+            -we can also put (/app2/) instead of (./)
+
+
         2)write this command:
             ng build
 
@@ -135,10 +148,24 @@ Production:
 
 
 
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+Netlify Deployment:
+    -free website for hosting
+    -it has no security ,it has low services
+
+    -make account and login
+    -upload website folder that contain index.html
+    
+    -after publishing website , we can go to domain settings to change website name
         
-                
-                    
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Paths:
+    / :means root folder of our current drive
+    ./ : means current working directory(folder)
+    ../ :means parent of current working directory(folder)
+
 
 
 -->

@@ -17,7 +17,9 @@ export class MoviesComponent implements OnInit, OnDestroy {
   moviesSub:any;
   pages:number[] = [];
   totalPages:number = 0 ;
-
+  currentPage:number = 1;
+  isPrev:boolean = false;
+  isNext:boolean = true;
   word:string = '';
 
   constructor(private _MoviesService:MoviesService) { }
@@ -33,6 +35,10 @@ export class MoviesComponent implements OnInit, OnDestroy {
       for(let i = 1; i <=this.totalPages; i++){
         this.pages.push(i);
       }
+
+      if(this.totalPages == 1){
+        this.isNext = false;
+      }
     });
   }
 
@@ -43,6 +49,39 @@ export class MoviesComponent implements OnInit, OnDestroy {
     this.moviesSub = this._MoviesService.getTrending("movie", page_number).subscribe((response)=>{
       this.trendingMovies = response.results;
     });
+  }
+
+  getPageByNumber(pageNumber:number){
+    this.moviesSub = this._MoviesService.getTrending("movie", pageNumber).subscribe((response)=>{
+      this.trendingMovies = response.results;
+    });
+  }
+
+  getNext(){
+    if(this.currentPage < this.totalPages){
+      this.currentPage++;
+      this.isPrev = true;
+    }
+
+    if(this.currentPage == this.totalPages){
+      this.isNext = false;
+    }
+
+    this.getPageByNumber(this.currentPage);
+
+  }
+
+  getPrev(){
+    if(this.currentPage > 1){
+      this.currentPage--;
+      this.isNext = true;
+    }
+
+    if(this.currentPage == 1){
+      this.isPrev = false;
+    }
+
+    this.getPageByNumber(this.currentPage);
   }
 
 

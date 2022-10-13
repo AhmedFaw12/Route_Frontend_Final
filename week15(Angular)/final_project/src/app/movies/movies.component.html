@@ -34,8 +34,15 @@
 
 </div>
 
-
-
+<div>
+  <div class="my-pagination">
+    <div *ngIf="isPrev" (click)="getPrev()" class="page">previous</div>
+    <div *ngIf="currentPage - 1 >= 1" (click)="getPrev()" class="page-item">{{currentPage-1}}</div>
+    <div class="current">{{currentPage}}</div>
+    <div *ngIf="currentPage + 1 <= totalPages" (click)="getNext()" class="page-item">{{currentPage+1}}</div>
+    <div *ngIf="isNext" (click)="getNext()" class= "page">next</div>
+  </div>
+</div>
 
 <!-- <div class="mb-2 p-3">
   <label class="mb-2" for="test">Testing ngOnChange</label>

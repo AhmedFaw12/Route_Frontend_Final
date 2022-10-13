@@ -1,0 +1,30 @@
+$bgColor:#09c;
+@mixin borderPadding{
+  padding:10px;
+  border:solid #fff 1px;
+}
+
+.my-pagination{
+  display:flex;
+  margin: 10px 30px;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 20px;
+}
+
+
+.page{
+  @include borderPadding;
+  cursor: pointer;
+}
+
+.current{
+  @include borderPadding;
+  background-color: $bgColor;
+}
+
+.page-item{
+  @include borderPadding;
+  cursor: pointer;
+}

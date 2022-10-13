@@ -9,6 +9,9 @@ export class TvComponent implements OnInit, OnChanges {
 
   @Input() title:string = '';
 
+  p: number = 1;
+  collection: any[] = ["ahmed", "Mohamed"];
+
   constructor() { }
 
   ngOnInit(): void {
