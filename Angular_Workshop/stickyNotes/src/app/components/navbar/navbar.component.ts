@@ -6,8 +6,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent implements OnInit {
-
+  status:string = "SignIn";
   constructor() { }
+
+
+  getValue($eventInfo:any):void{
+    this.status = $eventInfo.target.text;
+  }
 
   ngOnInit(): void {
   }

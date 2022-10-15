@@ -1,5 +1,7 @@
 
 $mainbg:#343a40;
+$secondBg : #17a2b8;
+$thirdBg : #666;
 
 body{
   background-color: $mainbg;
@@ -9,5 +11,27 @@ body{
   background-color: $mainbg;
 }
 
+.second-bg{
+  background-color: #17a2b8;
+}
 
+.third-bg{
+  background-color: $thirdBg;
+}
 
+.form{
+  position: absolute;
+  width: 40%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.submit-btn{
+  background-color: $secondBg;
+  color: #fff;
+  &:hover{
+    background-color: #3797a6;
+    color: #fff;
+  }
+}

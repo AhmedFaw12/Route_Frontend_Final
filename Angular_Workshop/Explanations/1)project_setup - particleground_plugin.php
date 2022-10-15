@@ -186,4 +186,5 @@ What we will make in this project:
 
             -declare is used to tell the compiler "this thing (usually a variable) exists already, and therefore can be referenced by other code, also there is no need to compile this statement into any JavaScript".
 
+            -The declare keyword in TypeScript is used for the Ambient(المحيط ب) declaration of variables or for methods. Ambient Declarations is like an import keyword. Which tells the compiler that the source exists in another file. We use Ambient declarations in TypeScript for using the third party libraries of JavaScript, jQuery, Node, etc. declare keyword directly integrate these libraries in our code and decrease the chance of error in our TypeScript code.
 -->

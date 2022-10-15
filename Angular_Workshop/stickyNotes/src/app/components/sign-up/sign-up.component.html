@@ -1,3 +1,72 @@
 <section id="signUp">
-  
+  <form [formGroup]="signUpForm" (ngSubmit)="signUpForm.valid && signUp()">
+    <div class="form" >
+      <div class="row">
+
+        <div class="col-md-6 mb-3">
+
+          <input [class.is-valid]="signUpForm.get('firstName')?.status =='VALID'" type="text" formControlName="firstName" class="form-control" placeholder="Enter First Name">
+
+          <div *ngIf="signUpForm.get('firstName')?.errors && signUpForm.get('firstName')?.touched" class="alert alert-danger my-2">
+            <p *ngIf="signUpForm.get('firstName')?.errors?.required"> first name is required</p>
+          </div>
+
+        </div>
+
+        <div class="col-md-6 mb-3">
+
+          <input [class.is-valid]="signUpForm.get('lastName')?.status =='VALID'" type="text" formControlName="lastName" class="form-control" placeholder="Enter Last Name">
+
+          <div *ngIf="signUpForm.get('lastName')?.errors && signUpForm.get('lastName')?.touched" class="alert alert-danger my-2">
+            <p *ngIf="signUpForm.get('lastName')?.errors?.required"> last name is required</p>
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="mb-3">
+        <input [class.is-valid]="signUpForm.get('email')?.status =='VALID'" type="email" formControlName="email" class="form-control" placeholder="Enter Your Email">
+
+        <div *ngIf="signUpForm.get('email')?.errors && signUpForm.get('email')?.touched" class="alert alert-danger my-2">
+          <p *ngIf="signUpForm.get('email')?.errors?.required">Email is required</p>
+          <p *ngIf="signUpForm.get('email')?.errors?.email">Email is Invalid</p>
+
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <input [class.is-valid]="signUpForm.get('age')?.status =='VALID'" type="number" formControlName="age" class="form-control" placeholder="Enter Your Age">
+
+        <div *ngIf="signUpForm.get('age')?.errors && signUpForm.get('age')?.touched" class="alert alert-danger my-2">
+          <p *ngIf="signUpForm.get('age')?.errors?.required">Age is required</p>
+          <p *ngIf="signUpForm.get('age')?.errors?.min">Min age is 16</p>
+          <p *ngIf="signUpForm.get('age')?.errors?.max">Max age is 80</p>
+
+        </div>
+
+      </div>
+
+      <div class=" mb-3">
+        <div class="input-group">
+          <input  [class.is-valid]="signUpForm.get('password')?.status =='VALID'" [type]="type" formControlName="password" class="form-control " placeholder="Enter Your Password">
+          <span (click)="changePasswordAppearance()" style="cursor: pointer;" class="input-group-text" id="basic-addon2"><i class="fas fa-eye"></i></span>
+        </div>
+
+        <div *ngIf="signUpForm.get('password')?.errors && signUpForm.get('password')?.touched" class="alert alert-danger my-2">
+          <p *ngIf="signUpForm.get('password')?.errors?.required">Password is required</p>
+          <ul class="list-unstyled" *ngIf="signUpForm.get('password')?.errors?.pattern">
+            <li>password must contain at least eight characters</li>
+            <li>at least one number</li>
+            <li>and both lower and uppercase letters</li>
+            <li>and special characters</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <button [disabled]='signUpForm.invalid' [ngStyle]="signUpForm.invalid?isStyleInvalid:isStyleValid" class="btn submit-btn w-100" type="submit">Sign Up</button>
+
+    </div>
+  </form>
 </section>
