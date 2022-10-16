@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ParticleGroundService } from 'src/app/services/particle-ground.service';
 import { PasswordAppearanceService } from 'src/app/services/password-appearance.service';
 import {FormGroup, FormControl, Validators} from "@angular/forms";
+import { AuthService } from 'src/app/services/auth.service';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -16,6 +18,10 @@ export class SignInComponent implements OnInit {
   isStyleInvalid= {'background-color':'gray', 'border-color':'gray'};
   isStyleValid = {'background-color':'#17a2b8' , 'border-color':'#17a2b8'};
 
+  errorMsg:string = '';
+  isError:boolean = false;
+  isClicked:boolean = false;
+
   signInForm = new FormGroup({
 
     email: new FormControl(null,
@@ -28,14 +34,31 @@ export class SignInComponent implements OnInit {
   signIn(){
     if(this.signInForm.valid){
 
-      console.log(this.signInForm);
-      console.log(this.signInForm.value);
+      this.isClicked = true;
+
+      this._AuthService.signIn(this.signInForm.value).subscribe((response) =>{
+        this.isClicked = false;
+
+        if(response.message == "success"){
+
+          this.isError = false;
+          localStorage.setItem("userToken", JSON.stringify(response.token));
+          this._AuthService.saveCurrentUser();
+          this._Router.navigate(['/profile']);
+
+        }else{
+          this.isError = true;
+          this.errorMsg  =response.message;
+        }
+      });
     }
   }
 
   constructor(
-    private _ParticleGroundService:ParticleGroundService
-    ,private _PasswordAppearanceService:PasswordAppearanceService) { }
+    private _ParticleGroundService:ParticleGroundService,
+    private _PasswordAppearanceService:PasswordAppearanceService,
+    private _AuthService:AuthService,
+    private _Router:Router) { }
 
   changePasswordAppearance(){
     this._PasswordAppearanceService.changePasswordAppearance();

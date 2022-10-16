@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-navbar',
@@ -6,15 +7,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent implements OnInit {
-  status:string = "SignIn";
-  constructor() { }
 
+  isLogin:boolean = false;
 
-  getValue($eventInfo:any):void{
-    this.status = $eventInfo.target.text;
-  }
+  constructor(private _AuthService:AuthService) {}
 
   ngOnInit(): void {
+    this._AuthService.currentUser.subscribe(()=>{
+      this.isLogin = !!this._AuthService.currentUser.getValue();
+    });
   }
+
+ 
 
 }

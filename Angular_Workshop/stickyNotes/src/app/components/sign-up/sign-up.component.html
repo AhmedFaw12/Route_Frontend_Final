@@ -5,20 +5,20 @@
 
         <div class="col-md-6 mb-3">
 
-          <input [class.is-valid]="signUpForm.get('firstName')?.status =='VALID'" type="text" formControlName="firstName" class="form-control" placeholder="Enter First Name">
+          <input [class.is-valid]="signUpForm.get('first_name')?.status =='VALID'" type="text" formControlName="first_name" class="form-control" placeholder="Enter First Name">
 
-          <div *ngIf="signUpForm.get('firstName')?.errors && signUpForm.get('firstName')?.touched" class="alert alert-danger my-2">
-            <p *ngIf="signUpForm.get('firstName')?.errors?.required"> first name is required</p>
+          <div *ngIf="signUpForm.get('first_name')?.errors && signUpForm.get('first_name')?.touched" class="alert alert-danger my-2">
+            <p *ngIf="signUpForm.get('first_name')?.errors?.required"> first name is required</p>
           </div>
 
         </div>
 
         <div class="col-md-6 mb-3">
 
-          <input [class.is-valid]="signUpForm.get('lastName')?.status =='VALID'" type="text" formControlName="lastName" class="form-control" placeholder="Enter Last Name">
+          <input [class.is-valid]="signUpForm.get('last_name')?.status =='VALID'" type="text" formControlName="last_name" class="form-control" placeholder="Enter Last Name">
 
-          <div *ngIf="signUpForm.get('lastName')?.errors && signUpForm.get('lastName')?.touched" class="alert alert-danger my-2">
-            <p *ngIf="signUpForm.get('lastName')?.errors?.required"> last name is required</p>
+          <div *ngIf="signUpForm.get('last_name')?.errors && signUpForm.get('last_name')?.touched" class="alert alert-danger my-2">
+            <p *ngIf="signUpForm.get('last_name')?.errors?.required"> last name is required</p>
           </div>
 
         </div>
@@ -65,7 +65,15 @@
 
       </div>
 
-      <button [disabled]='signUpForm.invalid' [ngStyle]="signUpForm.invalid?isStyleInvalid:isStyleValid" class="btn submit-btn w-100" type="submit">Sign Up</button>
+      <button [disabled]='signUpForm.invalid' [ngStyle]="signUpForm.invalid?isStyleInvalid:isStyleValid" class="btn submit-btn w-100" type="submit"><span *ngIf="!isClicked">Sign Up</span><span *ngIf="isClicked">Waiting...</span></button>
+
+      <div *ngIf="isSuccess" class="alert alert-success text-center my-3">
+        <strong>{{successMsg}}</strong>
+      </div>
+
+      <div *ngIf="isError" class="alert alert-danger text-center my-3">
+        <strong>{{errorMsg}}</strong>
+      </div>
 
     </div>
   </form>

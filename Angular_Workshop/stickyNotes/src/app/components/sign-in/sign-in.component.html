@@ -28,7 +28,11 @@
         </div>
 
       </div>
-      <button [disabled]="signInForm.invalid" [ngStyle]="signInForm.invalid?isStyleInvalid:isStyleValid" class="btn submit-btn w-100">Sign In</button>
+      <button  [disabled]="signInForm.invalid" [ngStyle]="signInForm.invalid?isStyleInvalid:isStyleValid" class="btn submit-btn w-100"><span *ngIf="!isClicked">Sign In</span><span *ngIf="isClicked">Waiting...</span></button>
+
+      <div *ngIf="isError" class="alert alert-danger text-center my-3">
+        <strong>{{errorMsg}}</strong>
+      </div>
     </div>
   </form>
 </section>

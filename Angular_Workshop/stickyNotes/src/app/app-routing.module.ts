@@ -4,12 +4,14 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { SignInComponent } from './components/sign-in/sign-in.component';
 import { SignUpComponent } from './components/sign-up/sign-up.component';
+import { AuthGuard } from './guards/auth.guard';
+import { GuestGuard } from './guards/guest.guard';
 
 const routes: Routes = [
   {path:"", redirectTo:"signin" , pathMatch:"full"},
-  {path:"signin", component:SignInComponent},
-  {path:"profile", component:ProfileComponent},
-  {path:"signup", component:SignUpComponent},
+  {path:"signin", canActivate:[GuestGuard], component:SignInComponent},
+  {path:"signup",canActivate:[GuestGuard], component:SignUpComponent},
+  {path:"profile", canActivate:[AuthGuard], component:ProfileComponent},
   {path:"**", component:NotFoundComponent},
 
 ];
