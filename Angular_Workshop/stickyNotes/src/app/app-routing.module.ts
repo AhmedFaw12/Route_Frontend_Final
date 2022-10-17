@@ -10,6 +10,7 @@ import { GuestGuard } from './guards/guest.guard';
 const routes: Routes = [
   {path:"", redirectTo:"signin" , pathMatch:"full"},
   {path:"signin", canActivate:[GuestGuard], component:SignInComponent},
+  {path:"signin/:successLogout", canActivate:[GuestGuard], component:SignInComponent},
   {path:"signup",canActivate:[GuestGuard], component:SignUpComponent},
   {path:"profile", canActivate:[AuthGuard], component:ProfileComponent},
   {path:"**", component:NotFoundComponent},
@@ -17,7 +18,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, {useHash:true})],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

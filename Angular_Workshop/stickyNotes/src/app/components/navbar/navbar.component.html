@@ -13,7 +13,7 @@
           <ul class="dropdown-menu">
             <li *ngIf="!isLogin"><a class="dropdown-item" routerLink="/signup">SignUp</a></li>
             <li *ngIf="!isLogin"><a class="dropdown-item" routerLink="/signin">SignIn</a></li>
-            <li *ngIf="isLogin"><a class="dropdown-item" >Logout</a></li>
+            <li *ngIf="isLogin"><a class="dropdown-item" (click)="logout()" >Logout</a></li>
           </ul>
         </li>
 

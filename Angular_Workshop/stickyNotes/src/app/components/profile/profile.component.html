@@ -1,10 +1,21 @@
 <section id="profile" class="third-bg py-5">
-  <div class="container pt-5">
-    <div class="row">
+
+  <div *ngIf="!isLoaded" class="loadingScreen d-flex align-items-center justify-content-center">
+        <div class="spinner">
+          <div class="rect1"></div>
+          <div class="rect2"></div>
+          <div class="rect3"></div>
+          <div class="rect4"></div>
+          <div class="rect5"></div>
+        </div>
+  </div>
+
+  <div  class="container pt-5">
+    <div *ngIf="isLoaded" class="row">
       <div class="col-md-12 mb-3">
           <button class="btn btn-info float-end" data-bs-toggle="modal" data-bs-target="#AddNote">Add Note</button>
       </div>
-      <div class="col-md-3 mb-3">
+      <div *ngFor="let note of allNotes; let i = index" class="col-md-4  mb-3">
         <div class="node text-center p-4">
           <div class="row">
             <div class="col-md-12">
@@ -14,19 +25,21 @@
 
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
 
-                  <li><a class="dropdown-item text-info" data-bs-toggle="modal" data-bs-target="#EditNote"><span>Edit</span><i class="fas fa-edit float-end"></i></a></li>
+                  <li><a class="dropdown-item text-info" (click)="setValue(i);" data-bs-toggle="modal" data-bs-target="#EditNote"><span>Edit</span><i class="fas fa-edit float-end"></i></a></li>
 
-                  <li><a class="dropdown-item text-danger" data-bs-toggle="modal" data-bs-target="#DeleteNote"><span>Delete</span><i class="fas fa-trash float-end"></i></a></li>
+                  <li><a class="dropdown-item text-danger" (click)="getNoteId(note._id)" data-bs-toggle="modal" data-bs-target="#DeleteNote"><span>Delete</span><i class="fas fa-trash float-end"></i></a></li>
                 </ul>
               </div>
             </div>
           </div>
-          <h2>My Note Title</h2>
-          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Enim, perspiciatis.</p>
+          <h2 class="box">{{note.title}}</h2>
+          <p class="box">{{note.desc}}</p>
 
         </div>
       </div>
     </div>
+
+    
   </div>
 </section>
 
@@ -36,28 +49,30 @@
 <!-- ------------------------------------ Add Note --------------------------------------------- -->
 <div class="modal fade" id="AddNote" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Add Note</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-12 mb-3">
-              <input type="text" class="form-control" placeholder="Title">
-            </div>
-            <div class="col-md-12 mb-3">
-              <textarea name="" id="" class="form-control" placeholder="Type your Note" cols="30" rows="10"></textarea>
+    <form [formGroup]="addNoteForm" (ngSubmit)="addNote()">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Add Note</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-12 mb-3">
+                <input type="text" formControlName="title" class="form-control" placeholder="Title">
+              </div>
+              <div class="col-md-12 mb-3">
+                <textarea formControlName="desc" class="form-control" placeholder="Type your Note" cols="30" rows="10"></textarea>
+              </div>
             </div>
           </div>
         </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-info"><span *ngIf="!isWaiting">Add</span><span *ngIf="isWaiting">Waiting...</span> </button>
+          <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancel</button>
+        </div>
       </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-info">Add</button>
-        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancel</button>
-      </div>
-    </div>
+    </form>
   </div>
 </div>
 <!-- ------------------------------------ /Add Note --------------------------------------------- -->
@@ -65,28 +80,30 @@
 <!-- ------------------------------------ Edit Note --------------------------------------------- -->
 <div class="modal fade" id="EditNote" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Edit Note</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-12 mb-3">
-              <input type="text" class="form-control" placeholder="Title">
-            </div>
-            <div class="col-md-12 mb-3">
-              <textarea name="" id="" class="form-control" placeholder="Type your Note" cols="30" rows="10"></textarea>
+    <form [formGroup]="editNoteForm" (ngSubmit)="editNote()">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Edit Note</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-12 mb-3">
+                <input type="text" formControlName="title" class="form-control" placeholder="Title">
+              </div>
+              <div class="col-md-12 mb-3">
+                <textarea formControlName="desc" class="form-control" placeholder="Type your Note" cols="30" rows="10"></textarea>
+              </div>
             </div>
           </div>
         </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-info"><span *ngIf="!isWaiting">Save</span><span *ngIf="isWaiting">Waiting...</span> </button>
+          <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancel</button>
+        </div>
       </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-info">Save</button>
-        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancel</button>
-      </div>
-    </div>
+    </form>
   </div>
 </div>
 <!-- ------------------------------------ /Edit Note --------------------------------------------- -->
@@ -114,7 +131,7 @@
         </div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-info">Delete</button>
+        <button (click)="deleteNote()" class="btn btn-info">Delete</button>
         <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancel</button>
       </div>
     </div>

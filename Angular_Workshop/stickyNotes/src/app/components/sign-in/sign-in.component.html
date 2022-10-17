@@ -1,6 +1,11 @@
 <section id="signIn" class="">
   <form [formGroup]="signInForm" (ngSubmit)=" signInForm.valid && signIn()">
     <div class="form">
+
+      <div *ngIf="isLogout" class="alert alert-success text-center">
+        <strong>{{successLogoutMsg}}</strong>
+      </div>
+
       <div class="mb-3">
         <input [class.is-valid]="signInForm.get('email')?.status =='VALID'" type="email" formControlName="email" class="form-control" placeholder="Enter Your Email">
 

@@ -3,7 +3,7 @@ import { ParticleGroundService } from 'src/app/services/particle-ground.service'
 import { PasswordAppearanceService } from 'src/app/services/password-appearance.service';
 import {FormGroup, FormControl, Validators} from "@angular/forms";
 import { AuthService } from 'src/app/services/auth.service';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 
 @Component({
@@ -21,6 +21,9 @@ export class SignInComponent implements OnInit {
   errorMsg:string = '';
   isError:boolean = false;
   isClicked:boolean = false;
+
+  successLogoutMsg:string = '';
+  isLogout:boolean = false;
 
   signInForm = new FormGroup({
 
@@ -42,7 +45,7 @@ export class SignInComponent implements OnInit {
         if(response.message == "success"){
 
           this.isError = false;
-          localStorage.setItem("userToken", JSON.stringify(response.token));
+          localStorage.setItem("userToken", response.token);
           this._AuthService.saveCurrentUser();
           this._Router.navigate(['/profile']);
 
@@ -58,7 +61,8 @@ export class SignInComponent implements OnInit {
     private _ParticleGroundService:ParticleGroundService,
     private _PasswordAppearanceService:PasswordAppearanceService,
     private _AuthService:AuthService,
-    private _Router:Router) { }
+    private _Router:Router,
+    private _ActivatedRoute:ActivatedRoute) { }
 
   changePasswordAppearance(){
     this._PasswordAppearanceService.changePasswordAppearance();
@@ -67,5 +71,13 @@ export class SignInComponent implements OnInit {
 
   ngOnInit(): void {
     this._ParticleGroundService.fireParticlePlugin("#signIn");
+    if(this._ActivatedRoute.snapshot.params["successLogout"]){
+      this.successLogoutMsg = this._ActivatedRoute.snapshot.params["successLogout"];
+      this.isLogout = true;
+
+      setTimeout(()=> {
+        this.isLogout = false;
+      },1000);
+    }
   }
 }

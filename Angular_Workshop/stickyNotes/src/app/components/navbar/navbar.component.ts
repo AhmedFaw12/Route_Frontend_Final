@@ -1,4 +1,6 @@
+import { NgPluralCase } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
@@ -10,7 +12,7 @@ export class NavbarComponent implements OnInit {
 
   isLogin:boolean = false;
 
-  constructor(private _AuthService:AuthService) {}
+  constructor(private _AuthService:AuthService, private _Router:Router) {}
 
   ngOnInit(): void {
     this._AuthService.currentUser.subscribe(()=>{
@@ -18,6 +20,16 @@ export class NavbarComponent implements OnInit {
     });
   }
 
- 
+  logout(){
+    let tokenObj = {"token":localStorage.getItem("userToken")};
+    this._AuthService.signOut(tokenObj).subscribe((response)=>{
+
+      this._AuthService.currentUser.next(null);
+      localStorage.removeItem("userToken");
+      this._Router.navigate(["/signin", response.message]);
+    });
+  }
+
+
 
 }

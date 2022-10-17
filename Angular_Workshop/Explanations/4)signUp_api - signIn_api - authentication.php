@@ -228,7 +228,7 @@ Authentication:
 
         constructor(private _HttpClient:HttpClient) {
             if(localStorage.getItem("userToken")){
-            this.currentUser.next(localStorage.getItem("userToken")) ;
+                this.saveCurrentUser();
             }
         }
 
