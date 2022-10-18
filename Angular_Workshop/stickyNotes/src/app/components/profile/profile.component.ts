@@ -3,6 +3,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from 'src/app/services/auth.service';
 import { NotesService } from 'src/app/services/notes.service';
 import { Router } from '@angular/router';
+import { getCurrencySymbol } from '@angular/common';
 
 declare var $:any;
 
@@ -47,6 +48,11 @@ export class ProfileComponent implements OnInit {
 
         this.allNotes = response.Notes;
         this.isLoaded = true;
+
+        this.currentPageNotes = this.getCurrentPageNotes();
+        this.calculateTotalPages();
+
+
       }else{
         localStorage.clear();
         this.isLoaded = true;
@@ -109,9 +115,9 @@ export class ProfileComponent implements OnInit {
   isWaiting:boolean = false;
 
   setValue(index:number){
-    this.editNoteForm.controls.title.setValue(this.allNotes[index].title);
-    this.editNoteForm.controls.desc.setValue(this.allNotes[index].desc);
-    this.noteId = this.allNotes[index]._id;
+    this.editNoteForm.controls.title.setValue(this.currentPageNotes[index].title);
+    this.editNoteForm.controls.desc.setValue(this.currentPageNotes[index].desc);
+    this.noteId = this.currentPageNotes[index]._id;
   }
 
   editNote(){
@@ -133,5 +139,63 @@ export class ProfileComponent implements OnInit {
         this.getAllUserNotes();
       }
     });
+  }
+
+
+  /******************************Pagination ******************************/
+  currentPageNumber:number = 1;
+  totalPages:number = 1 ;
+  isNext = false;
+  isPrev = false;
+  currentPageNotes:any[] = [];
+  maxNotesPerPage = 9;
+
+  getNext(){
+
+    if(this.currentPageNumber < this.totalPages){
+      this.currentPageNumber++;
+      this.isPrev = true;
+      this.currentPageNotes = this.getCurrentPageNotes();
+    }
+    if(this.currentPageNumber == this.totalPages){
+      this.isNext = false;
+    }
+
+  }
+
+  calculateTotalPages(){
+    this.totalPages = Math.ceil(this.allNotes.length/this.maxNotesPerPage);
+    if(this.currentPageNumber < this.totalPages){
+      this.isNext = true;
+    }
+  }
+
+  getCurrentPageNotes():any[]{
+    let loopInit:number = (this.currentPageNumber-1) * this.maxNotesPerPage;
+    let loopEnd: number = loopInit + this.maxNotesPerPage;
+    let currentPageNotes:any[] = [];
+
+    if(loopEnd > this.allNotes.length){
+      loopEnd = this.allNotes.length;
+    }
+
+    console.log(loopInit, loopEnd);
+    for(let i = loopInit; i < loopEnd ; i++){
+      currentPageNotes.push(this.allNotes[i]);
+    }
+    console.log(currentPageNotes);
+    return currentPageNotes;
+  }
+
+  getPrev(){
+    if(this.currentPageNumber > 1){
+      this.currentPageNumber--;
+      this.isNext = true;
+      this.currentPageNotes = this.getCurrentPageNotes();
+    }
+
+    if(this.currentPageNumber == 1){
+      this.isPrev = false;
+    }
   }
 }

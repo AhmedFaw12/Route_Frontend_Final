@@ -71,11 +71,12 @@ export class SignInComponent implements OnInit {
 
   ngOnInit(): void {
     this._ParticleGroundService.fireParticlePlugin("#signIn");
-    if(this._ActivatedRoute.snapshot.params["successLogout"]){
+    if(this._ActivatedRoute.snapshot.params["successLogout"] == "success"){
       this.successLogoutMsg = this._ActivatedRoute.snapshot.params["successLogout"];
       this.isLogout = true;
 
       setTimeout(()=> {
+        this._Router.navigate(["/signin"]);
         this.isLogout = false;
       },1000);
     }

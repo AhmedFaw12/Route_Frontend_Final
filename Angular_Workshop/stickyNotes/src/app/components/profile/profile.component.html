@@ -15,7 +15,7 @@
       <div class="col-md-12 mb-3">
           <button class="btn btn-info float-end" data-bs-toggle="modal" data-bs-target="#AddNote">Add Note</button>
       </div>
-      <div *ngFor="let note of allNotes; let i = index" class="col-md-4  mb-3">
+      <div *ngFor="let note of currentPageNotes; let i = index" class="col-md-4  mb-3">
         <div class="node text-center p-4">
           <div class="row">
             <div class="col-md-12">
@@ -39,7 +39,15 @@
       </div>
     </div>
 
-    
+
+    <div *ngIf="isLoaded" class="pagination fixed-bottom my-3">
+      <div *ngIf="isPrev" (click)="getPrev()" class="page"><i class="fa-solid fa-arrow-left"></i></div>
+      <div *ngIf="currentPageNumber-1 > 0 " (click)="getPrev()" class="page ">{{currentPageNumber-1}}</div>
+      <div class="page current">{{currentPageNumber}}</div>
+      <div *ngIf="currentPageNumber+1 <= totalPages " (click)="getNext()" class="page ">{{currentPageNumber+1}}</div>
+      <div *ngIf="isNext" (click)="getNext()" class="page"><i class="fa-solid fa-arrow-right"></i></div>
+    </div>
+
   </div>
 </section>
 
