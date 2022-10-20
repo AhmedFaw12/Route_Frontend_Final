@@ -1,5 +1,8 @@
-import {Setting} from './setting.js'
-new Setting();
+import {Settings} from './setting.js'
+new Settings();
+
+
+
 
 
 
