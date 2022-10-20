@@ -90,6 +90,57 @@ checkbox :
         
         <label>Python</label>
         <input type="checkbox" name="proglang[]" value="python">
+
+    How to get multiple selected checkbox values in js:
+        Example:
+            html:
+                <label>Margin</label>
+                <input type="checkbox" name="cssskills" value="margin">
+                <label>Padding</label>
+                <input type="checkbox" name="cssskills" value="padding">
+                <label>Position</label>
+                <input type="checkbox" name="cssskills" value="position" checked>
+
+                <button id="myBtn" class="btn btn-danger rounded-pill">submit</button>
+
+            js:
+                let boxesValues = [];
+                $("#myBtn").click(function(){
+                    let checkboxes = document.getElementsByName("cssskills");
+                    for (let box of checkboxes){
+                        if(box.checked){
+                            boxesValues.push(box.value);
+                        }
+                    }
+
+                    console.log(boxesValues);
+                });
+        
+    How to get multiple selected checkbox values in php:
+        -To get value of multiple checked checkboxes, name attribute in HTML input type=”checkbox” tag must be initialize with an array, to do this write [ ] at the end of it’s name attribute 
+
+
+        Example:
+            html:
+                <form action="#" method="post">
+                    <input type="checkbox" name="check_list[]" value="C/C++"><label>C/C++</label><br/>
+                    <input type="checkbox" name="check_list[]" value="Java"><label>Java</label><br/>
+                    <input type="checkbox" name="check_list[]" value="PHP"><label>PHP</label><br/>
+                    <input type="submit" name="submit" value="Submit"/>
+                </form>
+            
+            php:
+                            
+                if(isset($_POST['submit'])){//to run PHP script on submit
+                    if(!empty($_POST['check_list'])){
+                        // Loop to store and display values of individual checked checkbox.
+                        foreach($_POST['check_list'] as $selected){
+                            echo $selected."</br>";
+                        }
+                    }
+                }
+                
+
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Select option
