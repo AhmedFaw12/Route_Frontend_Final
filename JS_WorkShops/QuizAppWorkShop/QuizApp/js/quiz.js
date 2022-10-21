@@ -64,7 +64,6 @@ export class Quiz{
 
 
     showQuestion(){
-
         this.questionElement.innerHTML = this.data[this.currentQuestion].question;
         this.currentElement.innerHTML = this.currentQuestion+1;
         this.totalAmountElement.innerHTML = this.numberOfQuestions;
@@ -79,10 +78,13 @@ export class Quiz{
 
         let checkedAnswer = document.getElementsByName("answer");
         checkedAnswer = [...checkedAnswer].filter((element)=>{return element.checked});
-        this.checkAnswer(checkedAnswer[0].value);
-
-        this.currentQuestion++;
-        this.currentQuestion < this.numberOfQuestions ? this.showQuestion() : this.finish();    
+        
+        if(checkedAnswer.length > 0){
+            this.checkAnswer(checkedAnswer[0].value);
+    
+            this.currentQuestion++;
+            this.currentQuestion < this.numberOfQuestions ? this.showQuestion() : this.finish();    
+        }
     }
 
     finish(){

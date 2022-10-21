@@ -32,7 +32,9 @@ export class Settings{
         if(data.length > 0){
             $("#setting").fadeOut(700, ()=>{
                 $("#quiz").fadeIn(700);
-            })
+            });
+            
+            this.numberOfQuestionsElement.value = '';
             new Quiz(numberOfQuestions, data);
         }
 

@@ -1,0 +1,127 @@
+body{
+    font-family: Roboto, "Open Sans", sans-serif;
+    background-color: #1e202b;
+}
+
+.bg-main{
+    background-color: #1e202b;
+}
+
+.bg-second{
+    background-color: #323544;
+}
+
+.bg-third{
+    background-color: #262936;
+}
+
+.btn-color{
+    background-color: #009ad8;
+}
+
+.color-main{
+    color: rgb(191, 193, 200);
+}
+
+.logo-text h1{
+    margin-bottom: 0px;
+}
+
+.logo-text small{
+    font-size: 0.7rem;
+}
+
+.navbar-dark .navbar-nav .nav-link{
+    color: #fff;
+    transition: all 0.3s;
+    padding: 5px 15px;
+    margin-right: 5px;
+    margin-bottom: 10px;
+    border: 2px solid transparent;
+    border-radius: 50rem;
+
+    font-size: 0.9rem;
+}
+
+.navbar-dark .navbar-nav .nav-link:hover{
+    color: #009ad8;
+    border: 2px solid #009ad8;
+    border-radius: 50rem;
+
+}
+
+.navbar-dark .navbar-nav .active{
+    color: #009ad8 !important;
+    border: 2px solid #009ad8;
+    border-radius: 50rem;
+}
+
+
+/* ********************** main******************************** */
+.main{
+    background-image: url('../images/banner.png');
+    background-size: cover;
+    background-position: center center;
+    min-height: 40vh;
+}
+
+input{
+    padding: 25px!important;
+    background-color: #1e202b!important;
+    border-color: transparent!important;
+    color: #fff!important;
+}
+
+button{
+    position: absolute;
+    z-index: 99999;
+    right: 7px;
+    top: 7px;
+    bottom: 7px;
+    padding: 6px 30px!important;
+    color: #fff !important;
+}
+/* ********************** main******************************** */
+
+.col-lg-4{
+    margin-right: 0;
+    padding-left: 0;
+    padding-right: 0;
+    margin-left: 0;
+}
+
+.temperature h2{
+    font-size: 4.4285714286rem;
+}
+
+#forecast .container{
+    margin-top: -150px;
+    margin-bottom: 50px;
+}
+
+.social-icons{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.social-icons .icon{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid transparent;
+    background-color: #1e202b;
+    color: #009ad8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 4px;
+}
+
+.social-icons .icon i{
+    font-size: 20px;
+}
+
+footer p{
+    min-height:100px;
+}
